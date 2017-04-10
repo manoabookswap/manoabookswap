@@ -1,36 +1,49 @@
-.landing-section-1 {
-  padding: 10px 10px 30px 10px;
-  background-color: #00B5AD;
-  color: #E5F9E7;
+body {
+  background: linear-gradient(
+      rgba(20,20,20, .5),
+      rgba(20,20,20, .5)),
+      url(/images/landing-image.JPG) fixed;
+  background-size: cover;
+  padding: 0;
+  margin: 0;
 }
 
-.landing-section-2 {
-  padding: 20px 10px 20px 10px;
-  background-color: #E5F9E7;
-  color:  #00B5AD;
+.welcome {
+  text-align: center;
+  margin-top: 90px;
+  color: white;
+  text-shadow: 0 0 30px #000;
 }
 
-.landing-section-3 {
-  padding: 20px 10px 30px 30px;
-  background-color: #00B5AD;
-  color: #E5F9E7;
+.h1 {
+  font-size: 40px;
 }
 
-.landing-section-5 {
-  padding: 20px 10px 20px 10px;
-  background-color: #00B5AD;
-  color: #E5F9E7;
+.row {
+  padding: 7px;
 }
 
-
-.landing-section-1-welcome {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 900;
-  font-size: 72px;
+.buy-sell {
+  background: rgba(255,255,255,0.25);
+  border-radius: 0px;
+  color: white;
+  font-size: 22px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 65px;
 }
 
-.landing-section-header {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 900;
-  font-size: 36px;
+.icon {
+  color: white;
+}
+
+.login {
+  margin-top: 35px;
+  border-radius: 3px;
+}
+
+.ui.button {
+  background-color: #42B4E6;
+  color: white;
+  border-radius: 0px;
 }
