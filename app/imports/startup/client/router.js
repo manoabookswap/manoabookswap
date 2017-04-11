@@ -68,6 +68,15 @@ userRoutes.route('/filter', {
   },
 });
 
+export const faqPageRouteName = 'FAQ_Page';
+userRoutes.route('/faq', {
+  name: faqPageRouteName,
+  action() {
+    BlazeLayout.render('User_Layout', { main: faqPageRouteName });
+  },
+});
+
+
 /*                        MISC ROUTES                       */
 FlowRouter.notFound = {
   action() {
