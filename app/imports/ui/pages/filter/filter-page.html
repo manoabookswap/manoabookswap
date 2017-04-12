@@ -3,51 +3,60 @@
   {{#if Template.subscriptionsReady}}
   <div style="margin-top: 10px" class="ui container">
 
-    <form class="ui equal width form filter-data-form">
+      <div style="margin-top: 10px" class="ui fluid three column grid container">
 
-      <label>Subject</label>
-      <div class="field">
-        <select name="Subject" class="ui fluid search dropdown">
-          <option value="">Subject</option>
-          <option value="MATH">Mathematics</option>
-          <option value="PHYS">Physics</option>
-          <option value="CHEM">Chemistry</option>
-          <option value="BIO">Biology</option>
-        </select>
-      </div>
-
-      <label>Course Number</label>
-      <div class="field">
-        <select name="Number" class="ui fluid search dropdown">
-          <option value="">Course Number</option>
-          <option value="101">101</option>
-          <option value="102">102</option>
-          <option value="201">201</option>
-          <option value="202">202</option>
-        </select>
-      </div>
-
-      <label>Price</label>
-      <div class="field">
-        <div class="ui selection dropdown">
-          <input type="hidden" name="Price">
-          <i class="dropdown icon"></i>
-          <div class="default text">Price</div>
-          <div class="menu">
-            <div class="item" data-value="0">$0-$25</div>
-            <div class="item" data-value="1">$25-$50</div>
-            <div class="item" data-value="2">$50-$75</div>
-            <div class="item" data-value="3">$75-$100</div>
+        <label>Subject</label>
+        <div class="container">
+          <div class="field">
+            <select name="Subject" class="ui   search dropdown">
+              <option value="">Subject</option>
+              <option value="MATH">Mathematics</option>
+              <option value="PHYS">Physics</option>
+              <option value="CHEM">Chemistry</option>
+              <option value="BIO">Biology</option>
+            </select>
           </div>
         </div>
+
+        <label>Course Number</label>
+        <div class="container">
+          <div class="field">
+            <select name="Number" class="ui fluid search dropdown">
+              <option value="">Course Number</option>
+              <option value="101">101</option>
+              <option value="102">102</option>
+              <option value="201">201</option>
+              <option value="202">202</option>
+            </select>
+          </div>
+        </div>
+
+        <label>Price</label>
+        <div class="container">
+          <div class="field">
+            <div class="ui selection dropdown">
+              <input type="hidden" name="Price">
+              <i class="dropdown icon"></i>
+              <div class="default text">Price</div>
+              <div class="menu">
+                <div class="item" data-value="0">$0-$25</div>
+                <div class="item" data-value="1">$25-$50</div>
+                <div class="item" data-value="2">$50-$75</div>
+                <div class="item" data-value="3">$75-$100</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="ui teal button" type="submit">Filter</button>
+
       </div>
 
-      <button class="ui teal button" type="submit">Filter</button>
-    </form>
 
-    <div style="margin-top: 20px" class="ui cards">
+
+    <div style="margin-top: 40px; margin-bottom: 10px;" class="ui cards">
 
       <div class="card">
+
         <div class="content">
           <a class="center aligned header">Set Theory And Logic</a>
         </div>
@@ -66,63 +75,82 @@
         <div class="center aligned description">
           Price: $29.99
         </div>
+        <div class="extra content">
+          <div class="ui large transparent left icon input">
+            <i class="mail outline icon"></i>
+          </div>
+        </div>
+
       </div>
 
 
       <div class="card">
+
         <div class="content">
-          <a class="center aligned header">Set Theory And Logic</a>
+          <a class="center aligned header">Calculus</a>
         </div>
         <div class="center aligned description">
-          Author: Robert R. Stoll
+          Author: John Rogawski
         </div>
         <div class="center aligned description">
-          Edition: 1st Edition
+          Edition: 2nd Edition
         </div>
         <div class="center aligned description">
-          Subject: Information & Computer Science
+          Subject: Mathematics
         </div>
         <div class="center aligned description">
-          Course Number: 141
+          Course Number: 241
         </div>
         <div class="center aligned description">
-          Price: $29.99
+          Price: $79.99
         </div>
+        <div class="extra content">
+          <div class="ui large transparent left icon input">
+            <i class="mail outline icon"></i>
+          </div>
+        </div>
+
       </div>
 
 
       <div class="card">
-        <div class="content">
-          <a class="center aligned header">Set Theory And Logic</a>
-        </div>
-        <div class="center aligned description">
-          Author: Robert R. Stoll
-        </div>
-        <div class="center aligned description">
-          Edition: 1st Edition
-        </div>
-        <div class="center aligned description">
-          Subject: Information & Computer Science
-        </div>
-        <div class="center aligned description">
-          Course Number: 141
-        </div>
-        <div class="center aligned description">
-          Price: $29.99
-        </div>
-      </div>
 
+        <div class="content">
+          <a class="center aligned header">Physics</a>
+        </div>
+        <div class="center aligned description">
+          Author: James S. Walker
+        </div>
+        <div class="center aligned description">
+          Edition: 2nd Edition
+        </div>
+        <div class="center aligned description">
+          Subject: Physics
+        </div>
+        <div class="center aligned description">
+          Course Number: 171
+        </div>
+        <div class="center aligned description">
+          Price: $49.99
+        </div>
+        <div class="extra content">
+          <div class="ui large transparent left icon input">
+            <i class="mail outline icon"></i>
+          </div>
+        </div>
+
+      </div>
     </div>
+
+    <script>
+      $('.ui.dropdown')
+          .dropdown({
+            allowAdditions: true
+          })
+      ;
+    </script>
   </div>
 
-
-  <script>
-    $('.ui.dropdown')
-        .dropdown({
-          allowAdditions: true
-        })
-    ;
-  </script>
   {{/if}}
   </body>
 
