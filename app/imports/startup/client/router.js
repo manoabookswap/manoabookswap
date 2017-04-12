@@ -76,6 +76,14 @@ userRoutes.route('/filter', {
   },
 });
 
+export const sellPageRouteName = 'Sell_Page';
+userRoutes.route('/sell', {
+  name: sellPageRouteName,
+  action() {
+    BlazeLayout.render('User_Layout', { main: sellPageRouteName });
+  },
+});
+
 /*                        MISC ROUTES                       */
 FlowRouter.notFound = {
   action() {

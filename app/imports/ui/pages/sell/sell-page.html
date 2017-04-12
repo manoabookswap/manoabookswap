@@ -1,0 +1,137 @@
+<template name="Sell_Page">
+
+  {{#if Template.subscriptionsReady}}
+
+  <div class="ui container sell">
+    <form class="ui form contact-data-form {{ errorClass }}">
+      <h4 class="ui dividing header">Post a Book for Sale</h4>
+      <div class="two fields">
+        {{> Text_Form_Control label="Title" placeholder="Introduction to Algorithms" required=true errorMessage=(fieldError "title")}}
+        {{> Text_Form_Control label="Author" placeholder="Thomas H. Cormen" required=true errorMessage=(fieldError "author")}}
+      </div>
+
+      <div class="fields">
+        <div class="three wide field">
+          <div class="field">
+            <label>Edition</label>
+            <select class="ui fluid search dropdown" name="edition">
+              <option value="">3rd</option>
+              <option value="1st">1st</option>
+              <option value="2nd">2nd</option>
+              <option value="3rd">3rd</option>
+              <option value="4th">4th</option>
+              <option value="5th">5th</option>
+              <option value="6th">6th</option>
+              <option value="7th">7th</option>
+              <option value="8th">8th</option>
+              <option value="9th">9th</option>
+              <option value="10th">10th</option>
+              <option value="11th">11th</option>
+              <option value="12th">12th</option>
+              <option value="13th">13th</option>
+              <option value="14th">14th</option>
+              <option value="15th">15th</option>
+              <option value="16th">16th</option>
+              <option value="17th">17th</option>
+              <option value="18th">18th</option>
+              <option value="19th">19th</option>
+              <option value="20th">20th</option>
+            </select>
+          </div>
+        </div>
+        <div class="ten wide field">
+          {{> Text_Form_Control label="Publisher" placeholder="MIT Press" required=false errorMessage=(fieldError "publisher")}}
+        </div>
+        <div class="three wide required field">
+          <label>Publication Year</label>
+          <input type="text" name="publication year" maxlength="4" placeholder="2009">
+        </div>
+      </div>
+
+      <div class="fields">
+        <div class="ten wide field">
+          {{> Text_Form_Control label="ISBN" placeholder="978-0262033848" required=false errorMessage=(fieldError "isbn")}}
+        </div>
+        <div class="three wide required field">
+          <div class="field">
+            <label>Subject</label>
+            <select class="ui fluid search dropdown" name="subject">
+              <option value="">ICS</option>
+              <option value="1st">1st</option>
+              <option value="2nd">2nd</option>
+              <option value="3rd">3rd</option>
+              <option value="4th">4th</option>
+              <option value="5th">5th</option>
+              <option value="6th">6th</option>
+              <option value="7th">7th</option>
+              <option value="8th">8th</option>
+              <option value="9th">9th</option>
+              <option value="10th">10th</option>
+              <option value="11th">11th</option>
+              <option value="12th">12th</option>
+              <option value="13th">13th</option>
+              <option value="14th">14th</option>
+              <option value="15th">15th</option>
+              <option value="16th">16th</option>
+              <option value="17th">17th</option>
+              <option value="18th">18th</option>
+              <option value="19th">19th</option>
+              <option value="20th">20th</option>
+            </select>
+          </div>
+        </div>
+        <div class="three wide required field">
+          <label>Course Number</label>
+          <input type="text" name="course number" maxlength="3" placeholder="311">
+        </div>
+      </div>
+
+      <div class="fields">
+        <div class="five wide field">
+          <div class="field">
+            <label>Cover Type</label>
+            <select class="ui fluid search dropdown" name="cover type">
+              <option value="hardcover">Hardcover</option>
+              <option value="paperback">Paperback</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="five wide requiredfield">
+          <div class="field">
+            <label>Condition</label>
+            <select class="ui fluid search dropdown" name="condition">
+              <option value="brand new">Brand New</option>
+              <option value="great">Great</option>
+              <option value="good">Good</option>
+              <option value="worn">Worn</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="six wide required field">
+          <label>Price</label>
+          <div class="ui right labeled input">
+            <div class="ui label">$</div>
+            <input type="text" placeholder="Amount">
+            <div class="ui basic label">.00</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <div>
+          <label for="file" class="ui icon button">
+            <i class="file icon"></i>
+            Choose Image</label>
+          <input type="file" id="file" style="display:none">
+        </div>
+      </div>
+
+
+      <button class="ui submit button">Submit</button>
+    </form>
+  </div>
+
+  {{/if}}
+</template>

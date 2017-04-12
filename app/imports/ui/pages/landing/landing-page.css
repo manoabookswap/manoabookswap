@@ -5,11 +5,11 @@
   text-shadow: 0 0 30px #000;
 }
 
-.h1 {
+.welcome-message {
   font-size: 40px;
 }
 
-.row {
+.description {
   padding: 7px;
 }
 
@@ -21,10 +21,6 @@
   margin-left: 10px;
   margin-right: 10px;
   margin-top: 65px;
-}
-
-.icon {
-  color: white;
 }
 
 .login {
