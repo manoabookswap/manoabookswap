@@ -100,6 +100,14 @@ userRoutes.route('/contact-us', {
   },
 });
 
+export const termsOfServiceRouteName = 'Terms_Of_Service';
+userRoutes.route('/tos', {
+  name: termsOfServiceRouteName,
+  action() {
+    BlazeLayout.render('User_Layout', { main: termsOfServiceRouteName });
+  },
+});
+
 
 /*                        MISC ROUTES                       */
 FlowRouter.notFound = {
