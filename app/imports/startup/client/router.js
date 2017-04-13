@@ -76,7 +76,6 @@ userRoutes.route('/filter', {
   },
 });
 
-
 export const faqPageRouteName = 'FAQ_Page';
 userRoutes.route('/faq', {
   name: faqPageRouteName,
