@@ -13,6 +13,8 @@ FlowRouter.route('/', {
   },
 });
 
+
+
 /*                        DIRECTORY ROUTE                       */
 
 function addDirectoryBodyClass() {
@@ -35,8 +37,6 @@ FlowRouter.route('/directory', {
 
 
 /*                        USER ROUTES                      */
-
-
 function addUserBodyClass() {
   $('body').addClass('user-layout-body');
 }
@@ -68,6 +68,7 @@ userRoutes.route('/filter', {
   },
 });
 
+
 export const faqPageRouteName = 'FAQ_Page';
 userRoutes.route('/faq', {
   name: faqPageRouteName,
@@ -75,6 +76,9 @@ userRoutes.route('/faq', {
     BlazeLayout.render('User_Layout', { main: faqPageRouteName });
   },
 });
+
+
+
 
 
 /*                        MISC ROUTES                       */
