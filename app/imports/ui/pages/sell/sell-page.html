@@ -44,19 +44,20 @@
         </div>
         <div class="three wide required field">
           <label>Publication Year</label>
-          <input type="text" name="publication year" maxlength="4" placeholder="2009">
+          <input name="publication year" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type = "number" maxlength = "4" placeholder="2009">
         </div>
       </div>
 
       <div class="fields">
         <div class="ten wide field">
-          {{> Text_Form_Control label="ISBN" placeholder="978-0262033848" required=false errorMessage=(fieldError "isbn")}}
+          <label>ISBN <a class="find-isbn" href="http://www.isbnsearch.org/">Click here to find ISBN</a></label>
+          <input type="text" name="isbn" maxlength="14" placeholder="978-0262033848">
         </div>
-        <div class="three wide required field">
-          <div class="field">
+        <div class="three wide field">
+          <div class="required field">
             <label>Subject</label>
             <select class="ui fluid search dropdown" name="subject">
-              <option value="">ICS (Information and Computer Sciences)</option>
+              <option value="">ICS</option>
               <option value="acm">ACM (Academy for Creative Media</option>
               <option value="acc">ACC (Accounting)</option>
               <option value="as">AS (Aerospace Studies)</option>
@@ -133,19 +134,105 @@
               <option value="ip">IP (Indo-Pacific Languages)</option>
               <option value="ind">IND (Indonesian)</option>
               <option value="ics">ICS (Information and Computer Sciences)</option>
-              <option value="20th">20th</option>
-              <option value="20th">20th</option>
-              <option value="20th">20th</option>
-              <option value="20th">20th</option>
-              <option value="20th">20th</option>
-              <option value="20th">20th</option>
-              <option value="20th">20th</option>
+              <option value="itm">ITM (Information Technology Management)</option>
+              <option value="ite">ITE (Institute for Teacher Education)</option>
+              <option value="ins">INS (Insurance)</option>
+              <option value="is">IS (Interdisciplinary Studies)</option>
+              <option value="cul">CUL (International Cultural Studies)</option>
+              <option value="ital">ITAL (Italian)</option>
+              <option value="jpn">JPN (Japanese)</option>
+              <option value="jour">JOUR (Journalism)</option>
+              <option value="krs">KRS (Kinesiology and Rehabilitation Science)</option>
+              <option value="kor">KOR (Korean)</option>
+              <option value="llea">LLEA (Languages and Literatures of Europe and the Americas)</option>
+              <option value="lll">LLL (Languages, Linguistics, and Literature)</option>
+              <option value="latn">LATN (Latin)</option>
+              <option value="lais">LAIS (Latin American and Iberian Studies)</option>
+              <option value="law">LAW (Law)</option>
+              <option value="lwev">LWEV (Environmental Law)</option>
+              <option value="lwjt">LWJT (Journal and Team Credits)</option>
+              <option value="lwlm">LWLM (LL.M Master of Law)</option>
+              <option value="lwlw">LWLW (Law Writing)</option>
+              <option value="lwpa">LWPA (Pacific and Asian Law)</option>
+              <option value="lwul">LWUL (ULU Lehua)</option>
+              <option value="ltec">LTEC (Learning Design and Technology)</option>
+              <option value="lis">LIS (Library and Information Science)</option>
+              <option value="ling">LING (Linguistics)</option>
+              <option value="mgt">MGT (Management)</option>
+              <option value="mao">MAO (Maori)</option>
+              <option value="mbio">MBIO (Marine Biology)</option>
+              <option value="mkt">MKT (Marketing)</option>
+              <option value="math">MATH (Mathematics)</option>
+              <option value="me">ME (Mechanical Engineering)</option>
+              <option value="mded">MDED (Medical Education)</option>
+              <option value="mdhx">MDHX (Medical History)</option>
+              <option value="medt">MEDT (Medical Technology)</option>
+              <option value="med">MED (Medicine)</option>
+              <option value="micr">MICR (Microbiology)</option>
+              <option value="msl">MSL (Military Science and Leadership)</option>
+              <option value="mcb">MCB (Molecular and Cell Biology)</option>
+              <option value="mbbe">MBBE (Molecular Biosciences and Bioengineering)</option>
+              <option value="mus">MUS (Music)</option>
+              <option value="nhh">NHH (Native Hawaiian Health)</option>
+              <option value="nrem">NREM (Natural Resources and Environmental Management)</option>
+              <option value="nsci">NSCI (Natural Sciences)</option>
+              <option value="nurs">NURS (Nursing)</option>
+              <option value="obgn">OBGN (Obstetrics and Gynecology)</option>
+              <option value="oest">OEST (Ocean and Earth Science and Technology)</option>
+              <option value="ore">ORE (Ocean and Resources Engineering)</option>
+              <option value="ocn">OCN (Oceanography)</option>
+              <option value="pas">PAS (Pacific and Asian Studies)</option>
+              <option value="pacs">PACS (Pacific Island Studies)</option>
+              <option value="path">PATH (Pathology)</option>
+              <option value="pace">PACE (Peace Studies)</option>
+              <option value="ped">PED (Pediatrics)</option>
+              <option value="pers">PERS (Persian)</option>
+              <option value="phrm">PHRM (Pharmacology)</option>
+              <option value="phil">PHIL (Philosophy)</option>
+              <option value="phys">PHYS (Physics)</option>
+              <option value="phyl">PHYL (Physiology)</option>
+              <option value="peps">PEPS (Plant and Environmental Protection Sciences)</option>
+              <option value="pols">POLS (Political Science)</option>
+              <option value="port">PORT (Portuguese)</option>
+              <option value="psty">PSTY (Psychiatry)</option>
+              <option value="psy">PSY (Psychology)</option>
+              <option value="puba">PUBA (Public Administration)</option>
+              <option value="ph">PH (Public Health Sciences)</option>
+              <option value="ppc">PPC (Public Policy Center)</option>
+              <option value="re">RE (Real Estate)</option>
+              <option value="rel">REL (Religion)</option>
+              <option value="repr">REPR (Reproductive Biology)</option>
+              <option value="rus">RUS (Russian)</option>
+              <option value="sam">SAM (Samoan)</option>
+              <option value="snsk">SNSK (Sanskrit)</option>
+              <option value="sls">SLS (Second Language Studies)</option>
+              <option value="socs">SOCS (Social Studies)</option>
+              <option value="sw">SW (Social Work)</option>
+              <option value="soc">SOC (Sociology)</option>
+              <option value="span">SPAN (Spanish)</option>
+              <option value="sped">SPED (Special Education)</option>
+              <option value="span">SPAN</option>
+              <option value="surg">SURG (Surgury)</option>
+              <option value="taht">TAHT (Tahitian)</option>
+              <option value="thai">THAI (Thai)</option>
+              <option value="thea">THEA (Theatre)</option>
+              <option value="tong">TONG (Tongan)</option>
+              <option value="ti">TI (Translation and Interpretation)</option>
+              <option value="tim">TIM (Travel Industry Management)</option>
+              <option value="tahr">TAHR (Tropical Agriculture and Human Resources)</option>
+              <option value="trmd">TRMD (tropical Medicine and Medical Microbiology)</option>
+              <option value="tpss">TPSS (Tropical Plant and Soil Sciences)</option>
+              <option value="plan">PLAN (Urban and Regional Planning)</option>
+              <option value="urdu">URDU (Urdu)</option>
+              <option value="viet">VIET (Vietnamese)</option>
+              <option value="ws">WS (Women's Studies)</option>
+              <option value="zool">ZOOL (Zoology)</option>
             </select>
           </div>
         </div>
         <div class="three wide required field">
           <label>Course Number</label>
-          <input type="text" name="course number" maxlength="3" placeholder="311">
+          <input name="course number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type = "number" maxlength = "3" placeholder="311">
         </div>
       </div>
 
@@ -154,19 +241,22 @@
           <div class="field">
             <label>Cover Type</label>
             <select class="ui fluid search dropdown" name="cover type">
+              <option value="">Hardcover</option>
               <option value="hardcover">Hardcover</option>
               <option value="paperback">Paperback</option>
             </select>
           </div>
         </div>
 
-        <div class="five wide requiredfield">
-          <div class="field">
+        <div class="five wide field">
+          <div class="required field">
             <label>Condition</label>
             <select class="ui fluid search dropdown" name="condition">
+              <option value="">Excellent</option>
               <option value="brand new">Brand New</option>
-              <option value="great">Great</option>
+              <option value="excellent">Excellent</option>
               <option value="good">Good</option>
+              <option value="fair">Fair</option>
               <option value="worn">Worn</option>
             </select>
           </div>
@@ -176,7 +266,7 @@
           <label>Price</label>
           <div class="ui right labeled input">
             <div class="ui label">$</div>
-            <input type="text" placeholder="Amount">
+            <input type="number" placeholder="40">
             <div class="ui basic label">.00</div>
           </div>
         </div>
@@ -195,6 +285,12 @@
       <button class="ui submit button">Submit</button>
     </form>
   </div>
+
+  <script>
+    $('select.dropdown')
+        .dropdown()
+    ;
+  </script>
 
   {{/if}}
 </template>
