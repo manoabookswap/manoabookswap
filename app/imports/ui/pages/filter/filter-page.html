@@ -1,62 +1,63 @@
 <template name="Filter_Page">
+
   <body>
+
   {{#if Template.subscriptionsReady}}
+
   <div style="margin-top: 10px" class="ui container">
 
-      <div style="margin-top: 10px" class="ui fluid three column grid container">
+    <div style="margin-top: 10px" class="ui fluid three column grid container">
 
-        <label>Subject</label>
-        <div class="container">
-          <div class="field">
-            <select name="Subject" class="ui   search dropdown">
-              <option value="">Subject</option>
-              <option value="MATH">Mathematics</option>
-              <option value="PHYS">Physics</option>
-              <option value="CHEM">Chemistry</option>
-              <option value="BIO">Biology</option>
-            </select>
-          </div>
+      <label>Subject</label>
+      <div class="container">
+        <div class="field">
+          <select name="Subject" class="ui search dropdown">
+            <option value="">Subject</option>
+            <option value="MATH">Mathematics</option>
+            <option value="PHYS">Physics</option>
+            <option value="CHEM">Chemistry</option>
+            <option value="BIO">Biology</option>
+          </select>
         </div>
+      </div>
 
-        <label>Course Number</label>
-        <div class="container">
-          <div class="field">
-            <select name="Number" class="ui fluid search dropdown">
-              <option value="">Course Number</option>
-              <option value="101">101</option>
-              <option value="102">102</option>
-              <option value="201">201</option>
-              <option value="202">202</option>
-            </select>
-          </div>
+      <label>Course Number</label>
+      <div class="container">
+        <div class="field">
+          <select name="Number" class="ui fluid search dropdown">
+            <option value="">Course Number</option>
+            <option value="101">101</option>
+            <option value="102">102</option>
+            <option value="201">201</option>
+            <option value="202">202</option>
+          </select>
         </div>
+      </div>
 
-        <label>Price</label>
-        <div class="container">
-          <div class="field">
-            <div class="ui selection dropdown">
-              <input type="hidden" name="Price">
-              <i class="dropdown icon"></i>
-              <div class="default text">Price</div>
-              <div class="menu">
-                <div class="item" data-value="0">$0-$25</div>
-                <div class="item" data-value="1">$25-$50</div>
-                <div class="item" data-value="2">$50-$75</div>
-                <div class="item" data-value="3">$75-$100</div>
-              </div>
+      <label>Price</label>
+      <div class="container">
+        <div class="field">
+          <div class="ui selection dropdown">
+            <input type="hidden" name="Price">
+            <i class="dropdown icon"></i>
+            <div class="default text">Price</div>
+            <div class="menu">
+              <div class="item" data-value="0">$0-$25</div>
+              <div class="item" data-value="1">$25-$50</div>
+              <div class="item" data-value="2">$50-$75</div>
+              <div class="item" data-value="3">$75-$100</div>
             </div>
           </div>
         </div>
-        <button class="ui teal button" type="submit">Filter</button>
-
       </div>
+      <button class="ui teal button" type="submit">Filter</button>
 
+    </div>
 
 
     <div style="margin-top: 40px; margin-bottom: 10px;" class="ui cards">
 
       <div class="card">
-
         <div class="content">
           <a class="center aligned header">Set Theory And Logic</a>
         </div>
@@ -76,16 +77,18 @@
           Price: $29.99
         </div>
         <div class="extra content">
-          <div class="ui large transparent left icon input">
-            <i class="mail outline icon"></i>
-          </div>
+          <a>
+            <i style="color: blue" class="large mail square icon"></i>
+            student@hawaii.edu
+            <br/>
+            <i style="color: blue" class="large call square icon"></i>
+            (808)123-4567
+          </a>
         </div>
-
       </div>
 
 
       <div class="card">
-
         <div class="content">
           <a class="center aligned header">Calculus</a>
         </div>
@@ -105,16 +108,18 @@
           Price: $79.99
         </div>
         <div class="extra content">
-          <div class="ui large transparent left icon input">
-            <i class="mail outline icon"></i>
-          </div>
+          <a>
+            <i style="color: blue" class="large mail square icon"></i>
+            student@hawaii.edu
+            <br/>
+            <i style="color: blue" class="large call square icon"></i>
+            (808)123-4567
+          </a>
         </div>
-
       </div>
 
 
       <div class="card">
-
         <div class="content">
           <a class="center aligned header">Physics</a>
         </div>
@@ -134,12 +139,16 @@
           Price: $49.99
         </div>
         <div class="extra content">
-          <div class="ui large transparent left icon input">
-            <i class="mail outline icon"></i>
-          </div>
+          <a>
+          <i style="color: blue" class="large mail square icon"></i>
+            student@hawaii.edu
+          <br/>
+          <i style="color: blue" class="large call square icon"></i>
+            (808)123-4567
+          </a>
         </div>
-
       </div>
+
     </div>
 
     <script>
@@ -149,9 +158,11 @@
           })
       ;
     </script>
+
   </div>
 
   {{/if}}
+
   </body>
 
 </template>
