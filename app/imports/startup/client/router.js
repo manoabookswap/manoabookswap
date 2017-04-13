@@ -76,6 +76,14 @@ userRoutes.route('/filter', {
   },
 });
 
+export const sellPageRouteName = 'Sell_Page';
+userRoutes.route('/sell', {
+  name: sellPageRouteName,
+  action() {
+    BlazeLayout.render('User_Layout', { main: sellPageRouteName });
+  },
+});
+
 export const faqPageRouteName = 'FAQ_Page';
 userRoutes.route('/faq', {
   name: faqPageRouteName,
@@ -84,8 +92,13 @@ userRoutes.route('/faq', {
   },
 });
 
-
-
+export const contactUsRouteName = 'Contact_Us';
+userRoutes.route('/contact-us', {
+  name: contactUsRouteName,
+  action() {
+    BlazeLayout.render('User_Layout', { main: contactUsRouteName });
+  },
+});
 
 
 /*                        MISC ROUTES                       */
