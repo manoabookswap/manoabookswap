@@ -1,9 +1,145 @@
 <template name="Homepage_Page">
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+</head>
+  <body>
 
   {{#if Template.subscriptionsReady}}
 
+  <div style="margin-top: 10px" class="ui container">
+    <div class="ui one column center aligned grid">
+      <div class="four wide column">
+        <h1 style="font-size: 350%; font-family: 'Press Start 2P'">172</h1>
+        <i style="size: 500%" class="massive book icon green"></i>
+        <h1 style="font-size: 350%; font-family: 'Press Start 2P'">Sold!</h1>
+      </div>
+    </div>
+    <div class="ui sub header">Subjects</div>
+    <div class="ui fluid multiple search selection dropdown">
+      <input name="tags" type="hidden">
+      <i class="dropdown icon"></i>
+      <div class="default text">Subjects</div>
+      <div class="menu">
+        <div class="item" data-value="Astronomy">Astronomy</div>
+        <div class="item" data-value="Biology">Biology</div>
+        <div class="item" data-value="chemistry">Chemistry</div>
+        <div class="item" data-value="cs">Computer Science</div>
+        <div class="item" data-value="design">Graphic Design</div>
+        <div class="item" data-value="Math">Math</div>
+        <div class="item" data-value="Physics">Physics</div>
+      </div>
+    </div>
 
+    <h1>Featured Books From Your Subjects</h1>
+
+    <div style="margin-top: 40px; margin-bottom: 10px;" class="ui cards">
+
+      <div class="card">
+        <div class="content">
+          <a class="center aligned header">Set Theory And Logic</a>
+        </div>
+        <div class="center aligned description">
+          Author: Robert R. Stoll
+        </div>
+        <div class="center aligned description">
+          Edition: 1st Edition
+        </div>
+        <div class="center aligned description">
+          Subject: Information & Computer Science
+        </div>
+        <div class="center aligned description">
+          Course Number: 141
+        </div>
+        <div class="center aligned description">
+          Price: $29.99
+        </div>
+        <div class="extra content">
+          <a>
+            <i style="color: blue" class="large mail square icon"></i>
+            student@hawaii.edu
+            <br/>
+            <i style="color: blue" class="large call square icon"></i>
+            (808)123-4567
+          </a>
+        </div>
+      </div>
+
+
+      <div class="card">
+        <div class="content">
+          <a class="center aligned header">Calculus</a>
+        </div>
+        <div class="center aligned description">
+          Author: John Rogawski
+        </div>
+        <div class="center aligned description">
+          Edition: 2nd Edition
+        </div>
+        <div class="center aligned description">
+          Subject: Mathematics
+        </div>
+        <div class="center aligned description">
+          Course Number: 241
+        </div>
+        <div class="center aligned description">
+          Price: $79.99
+        </div>
+        <div class="extra content">
+          <a>
+            <i style="color: blue" class="large mail square icon"></i>
+            student@hawaii.edu
+            <br/>
+            <i style="color: blue" class="large call square icon"></i>
+            (808)123-4567
+          </a>
+        </div>
+      </div>
+
+
+      <div class="card">
+        <div class="content">
+          <a class="center aligned header">Physics</a>
+        </div>
+        <div class="center aligned description">
+          Author: James S. Walker
+        </div>
+        <div class="center aligned description">
+          Edition: 2nd Edition
+        </div>
+        <div class="center aligned description">
+          Subject: Physics
+        </div>
+        <div class="center aligned description">
+          Course Number: 171
+        </div>
+        <div class="center aligned description">
+          Price: $49.99
+        </div>
+        <div class="extra content">
+          <a>
+            <i style="color: blue" class="large mail square icon"></i>
+            student@hawaii.edu
+            <br/>
+            <i style="color: blue" class="large call square icon"></i>
+            (808)123-4567
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <script>
+      $('.ui.dropdown')
+          .dropdown({
+            allowAdditions: true
+          })
+      ;
+    </script>
+
+  </div>
 
   {{/if}}
-
+  </body>
+</html>
 </template>
