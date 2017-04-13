@@ -13,3 +13,5 @@ settings.production.json
 # Build node_modules locally, ignore errors.
 node_modules/
 npm-debug.log
+
+settings.json

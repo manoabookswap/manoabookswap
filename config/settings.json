@@ -1,0 +1,7 @@
+{
+  "galaxy.meteor.com": {
+    "env": {
+      "MONGO_URL": "mongodb://bganeko:Bran0904@ds159050.mlab.com:59050/manoabookswapdb"
+    }
+  }
+}
