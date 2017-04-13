@@ -1,12 +1,48 @@
 <template name="FAQ_Page">
-
+  <body>
   {{#if Template.subscriptionsReady}}
-    <div class="ui container">
-      <h1>FAQ</h1>
-      <h3>Q: How do I edit my profile page?</h3>
-      <p>A: Head over to your profile page. The fields there are dynamic, make any changes and press submit.</p>
+  <div class="container">
+    <h1 class="ui center aligned icon header">
+      <i class="massive info circle icon"></i>
+      FAQ
+    </h1>
+    <div class="ui styled fluid accordion">
+      <div class="title">
+        <i class="dropdown icon"></i>
+        Q: How do I edit my profile page?
+      </div>
+      <div class="content">
+        <p class="transition hidden">A: Head over to your profile page. The fields there are dynamic, make any changes
+          and press submit.</p>
+      </div>
+      <div class="title">
+        <i class="dropdown icon"></i>
+        Q: How do I pay for the books?
+      </div>
+      <div class="content">
+        <p>A: The method of payment is entirely up to the seller and the buyer. </p>
+      </div>
+      <div class="title">
+        <i class="dropdown icon"></i>
+        Q: How do I contact a seller?
+      </div>
+      <div class="content">
+        <p>A: Users are required to include either their email address or phone number. At least one of these forms of contact
+          will
+          be available at the bottom of the seller's listing.</p>
+      </div>
     </div>
+  </div>
 
+  <script>
+    $('.accordion')
+        .accordion({
+          selector: {
+            trigger: '.title .icon'
+          }
+        })
+    ;
+  </script>
   {{/if}}
-
+  </body>
 </template>
