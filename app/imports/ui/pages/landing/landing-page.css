@@ -28,7 +28,7 @@
   border-radius: 3px;
 }
 
-.ui.button {
+.ui.fluid.login.button {
   background-color: #42B4E6;
   color: white;
   border-radius: 0px;
