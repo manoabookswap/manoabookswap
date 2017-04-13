@@ -84,8 +84,13 @@ userRoutes.route('/faq', {
   },
 });
 
-
-
+export const contactUsRouteName = 'Contact_Us';
+userRoutes.route('/contact-us', {
+  name: contactUsRouteName,
+  action() {
+    BlazeLayout.render('User_Layout', { main: contactUsRouteName });
+  },
+});
 
 
 /*                        MISC ROUTES                       */
