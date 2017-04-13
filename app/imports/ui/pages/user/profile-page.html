@@ -9,32 +9,46 @@
     <form class="ui equal width form profile-data-form {{ successClass }} {{ errorClass }}">
 
       <div class="fields">
-        {{> Text_Form_Control label="First" placeholder="Philip" value=profile.firstName errorMessage=(fieldError "firstName")}}
-        {{> Text_Form_Control label="Last" placeholder="Johnson" value=profile.lastName errorMessage=(fieldError "lastName")}}
-
-      </div>
-
-      <div class="field">
-        {{> Text_Form_Control label="Title" placeholder="Student" value=profile.title errorMessage=(fieldError "title")}}
-        {{> Text_Form_Control label="Picture" placeholder="http://foo.com/shot.jpg" value=profile.picture errorMessage=(fieldError "picture")}}
-      </div>
-
-      <div class="field">
-        {{> Select_Form_Control label="Interests" options=interests errorMessage=(fieldError "interests") multiple=true }}
+        {{> Text_Form_Control label="First" placeholder="John" value=profile.firstName errorMessage=(fieldError "firstName")}}
+        {{> Text_Form_Control label="Last" placeholder="Smith" value=profile.lastName errorMessage=(fieldError "lastName")}}
       </div>
 
       <div class="fields">
-
-        {{> Social_Network_Form_Control label="Github" icon="github" placeholder="pmjohnson" value=profile.github errorMessage=(fieldError "github")}}
-        {{> Social_Network_Form_Control label="Facebook" icon="facebook" placeholder="pmjohnson" value=profile.facebook errorMessage=(fieldError "facebook")}}
-        {{> Social_Network_Form_Control label="Instagram" icon="instagram" placeholder="pmjohnson" value=profile.instagram errorMessage=(fieldError "instagram")}}
-
+        {{> Text_Form_Control label="Email" placeholder="johnsmith@hawaii.edu" errorMessage=(fieldError "firstName")}}
+        {{> Text_Form_Control label="Phone Number" placeholder="808-123-4567" errorMessage=(fieldError "firstName")}}
       </div>
 
-      {{> TextArea_Form_Control label="Bio" value=profile.bio placeholder="Short bio statement here" errorMessage=(fieldError "bio")}}
+      <div class="field">
+        <div class="ui centered form">
+          <div class="inline fields">
+            <label>Preferred form of contact</label>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input type="radio" name="frequency" checked="checked">
+                <label>Text</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input type="radio" name="frequency">
+                <label>Email</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input type="radio" name="frequency">
+                <label>Either</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
+      <div class="field">
+        {{> Select_Form_Control label="Subjects" options=interests errorMessage=(fieldError "interests") multiple=true }}
+      </div>
 
-      <button class="ui primary button" type="submit">Submit</button>
+      <button class="ui primary button" type="submit">Update</button>
       {{#if displaySuccessMessage}}
         <div class="ui success message">
           <p>Profile data successfully updated.</p>
