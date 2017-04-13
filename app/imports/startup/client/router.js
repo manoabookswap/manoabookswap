@@ -13,6 +13,8 @@ FlowRouter.route('/', {
   },
 });
 
+
+
 /*                        DIRECTORY ROUTE                       */
 
 function addDirectoryBodyClass() {
@@ -35,8 +37,6 @@ FlowRouter.route('/directory', {
 
 
 /*                        USER ROUTES                      */
-
-
 function addUserBodyClass() {
   $('body').addClass('user-layout-body');
 }
@@ -75,6 +75,18 @@ userRoutes.route('/filter', {
     BlazeLayout.render('User_Layout', { main: filterPageRouteName });
   },
 });
+
+export const faqPageRouteName = 'FAQ_Page';
+userRoutes.route('/faq', {
+  name: faqPageRouteName,
+  action() {
+    BlazeLayout.render('User_Layout', { main: faqPageRouteName });
+  },
+});
+
+
+
+
 
 /*                        MISC ROUTES                       */
 FlowRouter.notFound = {
