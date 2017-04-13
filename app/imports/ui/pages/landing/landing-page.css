@@ -5,11 +5,11 @@
   text-shadow: 0 0 30px #000;
 }
 
-.h1 {
+.welcome-message {
   font-size: 40px;
 }
 
-.row {
+.description {
   padding: 7px;
 }
 
@@ -23,16 +23,12 @@
   margin-top: 65px;
 }
 
-.icon {
-  color: white;
-}
-
 .login {
   margin-top: 35px;
   border-radius: 3px;
 }
 
-.ui.button {
+.ui.fluid.login.button {
   background-color: #42B4E6;
   color: white;
   border-radius: 0px;
