@@ -8,6 +8,7 @@ import '/imports/ui/layouts/landing';
 import '/imports/ui/layouts/shared';
 import '/imports/ui/layouts/user';
 import '/imports/ui/pages/directory';
+import '/imports/ui/pages/homepage';
 import '/imports/ui/pages/filter';
 import '/imports/ui/pages/landing';
 import '/imports/ui/pages/user';
