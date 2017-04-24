@@ -58,7 +58,11 @@
       {{ #each book in booksList }}
       <div class="ui card">
         <div style="background-color: #0F444C;" class="ui slide masked reveal image">
+          {{#if book.picture}}
           <img src={{ book.picture }} class="visible content">
+          {{else}}
+          <img src='/images/no-image.jpg' class="visible content">
+          {{/if}}
           <div style="color: white; padding-top: 50px;" class="hidden center aligned content">
             <p style="font-size: 16px;">Author(s): {{ book.author }}</p>
             <p style="font-size: 16px;">Publisher: {{ book.publisher }} ({{ book.publicationYear }})</p>
@@ -71,14 +75,15 @@
           <a class="header">{{ book.title }} - {{ book.edition }} Edition</a>
           <div class="meta">
             <span class="course">
-              {{ book.subject }} {{ book.courseNumber }} <br> {{ book.campus }}
+              <div class="uppercase">{{ book.subject }} {{ book.courseNumber }}</div>
+              {{ book.campus }}
             </span>
           </div>
         </div>
         <div class="extra content">
           <a>
             <i class="dollar icon"></i>
-            {{ book.price }}
+            {{ book.price }}.00
           </a>
         </div>
       </div>

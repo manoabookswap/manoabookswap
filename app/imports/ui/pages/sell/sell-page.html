@@ -7,27 +7,54 @@
       <h4 class="ui dividing header">Post a Book for Sale</h4>
       <div class="two fields">
 
-        {{> Text_Form_Control label="Title" placeholder="Introduction to Algorithms" required=true errorMessage=(fieldError "name")}}
+        {{> Text_Form_Control label="Title" placeholder="Introduction to Algorithms" required=true
+        errorMessage=(fieldError "name")}}
 
-        {{> Text_Form_Control label="Author" placeholder="Thomas H. Cormen" required=true errorMessage=(fieldError "name")}}
+        {{> Text_Form_Control label="Author" placeholder="Thomas H. Cormen" required=true errorMessage=(fieldError
+        "name")}}
 
       </div>
 
       <div class="fields">
         <div class="three wide field">
 
-          {{> Select_Form_Control label="Edition" required=true options=editions errorMessage=(fieldError "edition") }}
+          <div class="field">
+            <div class="required field">
+              <label>Edition</label>
+              <select class="ui fluid search dropdown" name="edition">
+                <option value="">3rd</option>
+                <option value="1st">1st</option>
+                <option value="2nd">2nd</option>
+                <option value="3rd">3rd</option>
+                <option value="4th">4th</option>
+                <option value="5th">5th</option>
+                <option value="6th">6th</option>
+                <option value="7th">7th</option>
+                <option value="8th">8th</option>
+                <option value="9th">9th</option>
+                <option value="10th">10th</option>
+                <option value="11th">11th</option>
+                <option value="12th">12th</option>
+                <option value="13th">13th</option>
+                <option value="14th">14th</option>
+                <option value="15th">15th</option>
+              </select>
+            </div>
+          </div>
 
         </div>
 
         <div class="ten wide field">
-          {{> Text_Form_Control label="Publisher" placeholder="MIT Press" required=true errorMessage=(fieldError "name")}}
+          {{> Text_Form_Control label="Publisher" placeholder="MIT Press" required=true errorMessage=(fieldError
+          "name")}}
 
         </div>
 
         <div class="three wide required field" id="publicationYear">
           <label>Publication Year</label>
-          <input name="publicationYear" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type = "number" maxlength = "4" placeholder="2009">
+          <input name="publicationYear"
+                 oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                 type="number" maxlength="4" placeholder="2009">
         </div>
       </div>
 
@@ -41,20 +68,20 @@
         <div class="field">
           <div class="required field">
             <label>Campus</label>
-          <select class="ui search dropdown" name="campus">
-            <option value="">UH Manoa</option>
-            <option value="Manoa">UH Manoa</option>
-            <option value="Hawaii">Hawaii Community College</option>
-            <option value="Honolulu">Honolulu Community College</option>
-            <option value="Kapiolani">Kapiolani Community College</option>
-            <option value="Kauai">Kauai Community College</option>
-            <option value="Leeward">Leeward Community College</option>
-            <option value="Hilo">UH Hilo</option>
-            <option value="Maui">UH Maui</option>
-            <option value="West Oahu">UH West Oahu</option>
-            <option value="Windward">Windward Community College</option>
-          </select>
-        </div>
+            <select class="ui search dropdown" name="campus">
+              <option value="">UH Manoa</option>
+              <option value="UH Manoa">UH Manoa</option>
+              <option value="Hawaii CC">Hawaii Community College</option>
+              <option value="Honolulu CC">Honolulu Community College</option>
+              <option value="Kapiolani CC">Kapiolani Community College</option>
+              <option value="Kauai CC">Kauai Community College</option>
+              <option value="Leeward CC">Leeward Community College</option>
+              <option value="UH Hilo">UH Hilo</option>
+              <option value="UH Maui">UH Maui</option>
+              <option value="UH West Oahu">UH West Oahu</option>
+              <option value="Windward CC">Windward Community College</option>
+            </select>
+          </div>
         </div>
       </div>
 
@@ -238,7 +265,9 @@
         </div>
         <div class="four wide required field" id="courseNumber">
           <label>Course Number</label>
-          <input name="courseNumber" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type = "number" maxlength = "3" placeholder="311">
+          <input name="courseNumber"
+                 oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                 type="number" maxlength="3" placeholder="311">
         </div>
       </div>
 

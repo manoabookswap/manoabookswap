@@ -9,19 +9,6 @@ import { Books, BooksSchema } from '../../../api/book/BookCollection.js';
 
 const displayErrorMessages = 'displayErrorMessages';
 
-export const editionObjects = [
-  { label: '1st', value: '1st' },
-  { label: '2nd', value: '2nd' },
-  { label: '3rd', value: '3rd' },
-  { label: '4th', value: '4th' },
-  { label: '5th', value: '5th' },
-  { label: '6th', value: '6th' },
-  { label: '7th', value: '7th' },
-  { label: '8th', value: '8th' },
-  { label: '9th', value: '9th' },
-  { label: '10th', value: '10th' },
-];
-
 Template.Sell_Page.onCreated(function onCreated() {
   this.messageFlags = new ReactiveDict();
   this.messageFlags.set(displayErrorMessages, false);
@@ -37,9 +24,6 @@ Template.Sell_Page.helpers({
     const errorObject = _.find(invalidKeys, (keyObj) => keyObj.name === fieldName);
     return errorObject && Template.instance().context.keyErrorMessage(errorObject.name);
   },
-  editions() {
-    return editionObjects;
-  },
 });
 
 Template.Sell_Page.events({
@@ -48,7 +32,7 @@ Template.Sell_Page.events({
     // Get name (text field)
     const title = event.target.Title.value;
     const author = event.target.Author.value;
-    const edition = event.target.Edition.value;
+    const edition = event.target.edition.value;
     const publisher = event.target.Publisher.value;
     const publicationYear = event.target.publicationYear.value;
     const isbn = event.target.isbn.value;
