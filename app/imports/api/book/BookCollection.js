@@ -13,6 +13,7 @@ export const BooksSchema = new SimpleSchema({
   publisher: { type: String, optional: true, label: 'publisher' },
   publicationYear: { type: String, optional: true, label: 'publicationYear' },
   isbn: { type: String, optional: true, label: 'isbn' },
+  campus: { type: String, optional: true, label: 'campus' },
   subject: { type: String, optional: false, label: 'subject' },
   courseNumber: { type: String, optional: false, label: 'courseNumber' },
   coverType: { type: String, optional: true, label: 'coverType' },

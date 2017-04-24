@@ -52,6 +52,7 @@ Template.Sell_Page.events({
     const publisher = event.target.Publisher.value;
     const publicationYear = event.target.publicationYear.value;
     const isbn = event.target.isbn.value;
+    const campus = event.target.campus.value;
     const subject = event.target.subject.value;
     const courseNumber = event.target.courseNumber.value;
     const coverType = event.target.coverType.value;
@@ -67,6 +68,7 @@ Template.Sell_Page.events({
       publisher,
       publicationYear,
       isbn,
+      campus,
       subject,
       courseNumber,
       coverType,
