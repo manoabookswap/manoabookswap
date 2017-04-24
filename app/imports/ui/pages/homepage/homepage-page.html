@@ -1,174 +1,92 @@
 <template name="Homepage_Page">
-<html>
-<head>
-  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
-</head>
+  <html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+  </head>
   <body>
 
   {{#if Template.subscriptionsReady}}
-  <div style="margin-top: 40px" class="ui container">
-    <div style="margin-top: 40px; margin-bottom: 10px;" class="ui cards">
+  <div style="margin-top: 40px; overflow-y: auto" class="ui two column grid container">
 
-    <div class="card">
-      <div class="content">
-        <img class="ui small circular image" src="/images/lau.jpg">
-        <h1><b>Hi there Charles!</b></h1>
-      </div>
-      <div class="center aligned description">
-        Author: Robert R. Stoll
-      </div>
-      <div class="center aligned description">
-        Edition: 1st Edition
-      </div>
-      <div class="center aligned description">
-        Subject: Information & Computer Science
-      </div>
-      <div class="center aligned description">
-        Course Number: 141
-      </div>
-      <div class="center aligned description">
-        Price: $29.99
-      </div>
-      <div class="extra content">
-        <a>
-          <i style="color: blue" class="large mail square icon"></i>
-          student@hawaii.edu
-          <br/>
-          <i style="color: blue" class="large call square icon"></i>
-          (808)123-4567
-        </a>
-      </div>
-    </div>
+    <div class="ui top aligned five wide column">
 
-    </div>
-  </div>
+      <div class="ui cards">
 
-    <div class="ui one column center aligned grid">
-      <div class="four wide column">
-        <h1 style="font-size: 350%; font-family: 'Press Start 2P', Times New Roman, serif">172</h1>
-        <i style="size: 500%" class="massive book icon green"></i>
-        <h1 style="font-size: 350%; font-family: 'Press Start 2P', Times New Roman, serif">Sold!</h1>
-      </div>
-    </div>
-
-  <div style="margin-top: 40px" class="ui container">
-    <h1 class="ui header">
-      <i class="massive empty star icon yellow"></i>
-      <div class="content">
-        Featured
-        <div class="sub header">Featured Books Based On Your Subjects</div>
-      </div>
-    </h1>
-
-    <div class="ui sub header">Subjects</div>
-    <div class="ui fluid multiple search selection dropdown">
-      <input name="tags" type="hidden">
-      <i class="dropdown icon"></i>
-      <div class="default text">Subjects</div>
-      <div class="menu">
-        <div class="item" data-value="Astronomy">Astronomy</div>
-        <div class="item" data-value="Biology">Biology</div>
-        <div class="item" data-value="chemistry">Chemistry</div>
-        <div class="item" data-value="cs">Computer Science</div>
-        <div class="item" data-value="design">Graphic Design</div>
-        <div class="item" data-value="Math">Math</div>
-        <div class="item" data-value="Physics">Physics</div>
-      </div>
-    </div>
-
-
-    <div style="margin-top: 40px; margin-bottom: 10px;" class="ui cards">
-
-      <div class="card">
+      <div class="ten wide card">
         <div class="content">
-          <a class="center aligned header">Set Theory And Logic</a>
+          <center><img class="ui small circular image" src="/images/lau.jpg">
+            <h1><b>Hi there Charles!</b></h1></center>
         </div>
         <div class="center aligned description">
-          Author: Robert R. Stoll
-        </div>
-        <div class="center aligned description">
-          Edition: 1st Edition
-        </div>
-        <div class="center aligned description">
-          Subject: Information & Computer Science
-        </div>
-        <div class="center aligned description">
-          Course Number: 141
-        </div>
-        <div class="center aligned description">
-          Price: $29.99
-        </div>
-        <div class="extra content">
-          <a>
-            <i style="color: blue" class="large mail square icon"></i>
-            student@hawaii.edu
-            <br/>
-            <i style="color: blue" class="large call square icon"></i>
-            (808)123-4567
-          </a>
+          You currently have no books for sale.
         </div>
       </div>
 
+      </div>
+    </div>
 
-      <div class="card">
-        <div class="content">
-          <a class="center aligned header">Calculus</a>
+    <div class="ui top aligned eleven wide two row column container">
+
+      <div class="row">
+
+        <div style="margin-bottom: 5px" class="ui three cards">
+          <div style="width: 200px" class="card">
+            <div class="content">
+              <center><a href="filter"><i class="massive cart icon black"></i></a></center>
+            </div>
+            <div class="center aligned description">
+              Shop Books
+            </div>
         </div>
-        <div class="center aligned description">
-          Author: John Rogawski
+          <div style="width: 200px" class="card">
+            <div class="content">
+              <center><a href="sell"><i class="massive money icon black"></i></a></center>
+            </div>
+            <div class="center aligned description">
+              Sell a Book
+            </div>
+          </div>
+          <div style="width: 200px" class="card">
+            <div class="content">
+              <center><i class="massive remove circle outline icon"></i></center>
+            </div>
+            <div class="center aligned description">
+              Delete a Listing
+            </div>
+          </div>
         </div>
-        <div class="center aligned description">
-          Edition: 2nd Edition
-        </div>
-        <div class="center aligned description">
-          Subject: Mathematics
-        </div>
-        <div class="center aligned description">
-          Course Number: 241
-        </div>
-        <div class="center aligned description">
-          Price: $79.99
-        </div>
-        <div class="extra content">
-          <a>
-            <i style="color: blue" class="large mail square icon"></i>
-            student@hawaii.edu
-            <br/>
-            <i style="color: blue" class="large call square icon"></i>
-            (808)123-4567
-          </a>
-        </div>
+
       </div>
 
+      <div class="row">
 
-      <div class="card">
-        <div class="content">
-          <a class="center aligned header">Physics</a>
+        <div style="margin-bottom: 5px" class="ui three cards">
+          <div style="width: 200px" class="card">
+            <div class="content">
+              <center><a href="profile"><i class="massive user icon black"></i></a></center>
+            </div>
+            <div class="center aligned description">
+              Edit my Profile
+            </div>
+          </div>
+          <div style="width: 200px" class="card">
+            <div class="content">
+              <center><a href="contact-us"><i class="massive mail icon black"></i></a></center>
+            </div>
+            <div class="center aligned description">
+              Contact an Admin
+            </div>
+          </div>
+          <div style="width: 200px" class="card">
+            <div class="content">
+              <center><a href="faq"><i class="massive help circle icon black"></i></a></center>
+            </div>
+            <div class="center aligned description">
+              Frequently Asked Questions
+            </div>
+          </div>
         </div>
-        <div class="center aligned description">
-          Author: James S. Walker
-        </div>
-        <div class="center aligned description">
-          Edition: 2nd Edition
-        </div>
-        <div class="center aligned description">
-          Subject: Physics
-        </div>
-        <div class="center aligned description">
-          Course Number: 171
-        </div>
-        <div class="center aligned description">
-          Price: $49.99
-        </div>
-        <div class="extra content">
-          <a>
-            <i style="color: blue" class="large mail square icon"></i>
-            student@hawaii.edu
-            <br/>
-            <i style="color: blue" class="large call square icon"></i>
-            (808)123-4567
-          </a>
-        </div>
+
       </div>
 
     </div>
@@ -179,11 +97,12 @@
             allowAdditions: true
           })
       ;
+
     </script>
 
   </div>
 
   {{/if}}
   </body>
-</html>
+  </html>
 </template>
