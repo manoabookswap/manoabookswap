@@ -1,6 +1,6 @@
 import { Template } from 'meteor/templating';
 import { _ } from 'meteor/underscore';
-import { Books } from '/imports/api/book/BookCollection';
+import { Books } from '/imports/api/book/BookCollection.js';
 
 Template.Filter_Page.onCreated(function onCreated() {
   this.subscribe('Books');
