@@ -31,12 +31,35 @@
         </div>
       </div>
 
-      <div class="fields">
-        <div class="ten wide field" id="isbn">
+      <div class="two fields">
+
+        <div class="field">
           <label>ISBN <a class="find-isbn" href="http://www.isbnsearch.org/">Click here to find ISBN</a></label>
           <input type="text" name="isbn" maxlength="14" placeholder="978-0262033848">
         </div>
-        <div class="three wide field">
+
+        <div class="field">
+          <div class="required field">
+            <label>Campus</label>
+          <select class="ui search dropdown">
+            <option value="">UH Manoa</option>
+            <option value="Manoa">UH Manoa</option>
+            <option value="Hawaii">Hawaii Community College</option>
+            <option value="Honolulu">Honolulu Community College</option>
+            <option value="Kapiolani">Kapiolani Community College</option>
+            <option value="Kauai">Kauai Community College</option>
+            <option value="Leeward">Leeward Community College</option>
+            <option value="Hilo">UH Hilo</option>
+            <option value="Maui">UH Maui</option>
+            <option value="West Oahu">UH West Oahu</option>
+            <option value="Windward">Windward Community College</option>
+          </select>
+        </div>
+        </div>
+      </div>
+
+      <div class="fields">
+        <div class="twelve wide field">
           <div class="required field" id="subject">
             <label>Subject</label>
             <select class="ui fluid search dropdown" name="subject">
@@ -213,7 +236,7 @@
             </select>
           </div>
         </div>
-        <div class="three wide required field" id="courseNumber">
+        <div class="four wide required field" id="courseNumber">
           <label>Course Number</label>
           <input name="courseNumber" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type = "number" maxlength = "3" placeholder="311">
         </div>
@@ -264,7 +287,7 @@
         <div>
           <label for="file" class="ui icon orange button">
             <i class="file icon"></i>
-            ChooseImage</label>
+            Choose Image</label>
           <input name="picture" type="file" id="file" style="display:none">
         </div>
       </div>
