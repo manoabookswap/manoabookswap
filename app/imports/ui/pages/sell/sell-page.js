@@ -68,6 +68,7 @@ Template.Sell_Page.events({
     // Determine validity.
     instance.context.validate(newSellData);
     if (instance.context.isValid()) {
+      console.log(newSellData);
       Books.insert(newSellData);
       instance.messageFlags.set(displayErrorMessages, false);
       const username = Meteor.user().profile.name;

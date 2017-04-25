@@ -8,40 +8,34 @@
       <div class="two fields">
 
         {{> Text_Form_Control label="Title" placeholder="Introduction to Algorithms" required=true
-        errorMessage=(fieldError "name")}}
+        errorMessage=(fieldError "title")}}
 
         {{> Text_Form_Control label="Author" placeholder="Thomas H. Cormen" required=true errorMessage=(fieldError
-        "name")}}
+        "author")}}
 
       </div>
 
       <div class="fields">
         <div class="three wide field">
-
-          <div class="field">
-            <div class="required field">
-              <label>Edition</label>
-              <select class="ui fluid search dropdown" name="edition">
-                <option value="">3rd</option>
-                <option value="1st">1st</option>
-                <option value="2nd">2nd</option>
-                <option value="3rd">3rd</option>
-                <option value="4th">4th</option>
-                <option value="5th">5th</option>
-                <option value="6th">6th</option>
-                <option value="7th">7th</option>
-                <option value="8th">8th</option>
-                <option value="9th">9th</option>
-                <option value="10th">10th</option>
-                <option value="11th">11th</option>
-                <option value="12th">12th</option>
-                <option value="13th">13th</option>
-                <option value="14th">14th</option>
-                <option value="15th">15th</option>
-              </select>
-            </div>
-          </div>
-
+          <label>Edition</label>
+          <select class="ui fluid search dropdown" name="edition">
+            <option value="">3rd</option>
+            <option value="1st">1st</option>
+            <option value="2nd">2nd</option>
+            <option value="3rd">3rd</option>
+            <option value="4th">4th</option>
+            <option value="5th">5th</option>
+            <option value="6th">6th</option>
+            <option value="7th">7th</option>
+            <option value="8th">8th</option>
+            <option value="9th">9th</option>
+            <option value="10th">10th</option>
+            <option value="11th">11th</option>
+            <option value="12th">12th</option>
+            <option value="13th">13th</option>
+            <option value="14th">14th</option>
+            <option value="15th">15th</option>
+          </select>
         </div>
 
         <div class="ten wide field">
@@ -284,17 +278,15 @@
         </div>
 
         <div class="five wide field">
-          <div class="required field" id="condition">
-            <label>Condition</label>
-            <select class="ui fluid search dropdown" name="condition">
-              <option value="">Excellent</option>
-              <option value="brand new">Brand New</option>
-              <option value="excellent">Excellent</option>
-              <option value="good">Good</option>
-              <option value="fair">Fair</option>
-              <option value="worn">Worn</option>
-            </select>
-          </div>
+          <label>Condition</label>
+          <select class="ui fluid search dropdown" name="condition">
+            <option value="">Excellent</option>
+            <option value="brand new">Brand New</option>
+            <option value="excellent">Excellent</option>
+            <option value="good">Good</option>
+            <option value="fair">Fair</option>
+            <option value="worn">Worn</option>
+          </select>
         </div>
 
         <div class="six wide required field" id="price">
@@ -322,6 +314,7 @@
       </div>
 
       <button class="ui blue submit button">Submit</button>
+
     </form>
   </div>
 
