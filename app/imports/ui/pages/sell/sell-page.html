@@ -3,58 +3,85 @@
   {{#if Template.subscriptionsReady}}
 
   <div class="ui container sell">
-    <form class="ui form contact-data-form {{ errorClass }}">
+    <form class="ui form sell-data-form {{ errorClass }}">
       <h4 class="ui dividing header">Post a Book for Sale</h4>
       <div class="two fields">
-        {{> Text_Form_Control label="Title" placeholder="Introduction to Algorithms" required=true errorMessage=(fieldError "title")}}
-        {{> Text_Form_Control label="Author" placeholder="Thomas H. Cormen" required=true errorMessage=(fieldError "author")}}
+
+        {{> Text_Form_Control label="Title" placeholder="Introduction to Algorithms" required=true
+        errorMessage=(fieldError "title")}}
+
+        {{> Text_Form_Control label="Author" placeholder="Thomas H. Cormen" required=true errorMessage=(fieldError
+        "author")}}
+
       </div>
 
       <div class="fields">
         <div class="three wide field">
-          <div class="field">
-            <label>Edition</label>
-            <select class="ui fluid search dropdown" name="edition">
-              <option value="">3rd</option>
-              <option value="1st">1st</option>
-              <option value="2nd">2nd</option>
-              <option value="3rd">3rd</option>
-              <option value="4th">4th</option>
-              <option value="5th">5th</option>
-              <option value="6th">6th</option>
-              <option value="7th">7th</option>
-              <option value="8th">8th</option>
-              <option value="9th">9th</option>
-              <option value="10th">10th</option>
-              <option value="11th">11th</option>
-              <option value="12th">12th</option>
-              <option value="13th">13th</option>
-              <option value="14th">14th</option>
-              <option value="15th">15th</option>
-              <option value="16th">16th</option>
-              <option value="17th">17th</option>
-              <option value="18th">18th</option>
-              <option value="19th">19th</option>
-              <option value="20th">20th</option>
-            </select>
-          </div>
+          <label>Edition</label>
+          <select class="ui fluid search dropdown" name="edition">
+            <option value="">3rd</option>
+            <option value="1st">1st</option>
+            <option value="2nd">2nd</option>
+            <option value="3rd">3rd</option>
+            <option value="4th">4th</option>
+            <option value="5th">5th</option>
+            <option value="6th">6th</option>
+            <option value="7th">7th</option>
+            <option value="8th">8th</option>
+            <option value="9th">9th</option>
+            <option value="10th">10th</option>
+            <option value="11th">11th</option>
+            <option value="12th">12th</option>
+            <option value="13th">13th</option>
+            <option value="14th">14th</option>
+            <option value="15th">15th</option>
+          </select>
         </div>
+
         <div class="ten wide field">
-          {{> Text_Form_Control label="Publisher" placeholder="MIT Press" required=false errorMessage=(fieldError "publisher")}}
+          {{> Text_Form_Control label="Publisher" placeholder="MIT Press" required=true errorMessage=(fieldError
+          "name")}}
+
         </div>
-        <div class="three wide required field">
+
+        <div class="three wide required field" id="publicationYear">
           <label>Publication Year</label>
-          <input name="publication year" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type = "number" maxlength = "4" placeholder="2009">
+          <input name="publicationYear"
+                 oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                 type="number" maxlength="4" placeholder="2009">
         </div>
       </div>
 
-      <div class="fields">
-        <div class="eight wide field">
+      <div class="two fields">
+
+        <div class="field">
           <label>ISBN <a class="find-isbn" href="http://www.isbnsearch.org/">Click here to find ISBN</a></label>
           <input type="text" name="isbn" maxlength="14" placeholder="978-0262033848">
         </div>
-        <div class="three wide field">
+
+        <div class="field">
           <div class="required field">
+            <label>Campus</label>
+            <select class="ui search dropdown" name="campus">
+              <option value="">UH Manoa</option>
+              <option value="UH Manoa">UH Manoa</option>
+              <option value="Hawaii CC">Hawaii Community College</option>
+              <option value="Honolulu CC">Honolulu Community College</option>
+              <option value="Kapiolani CC">Kapiolani Community College</option>
+              <option value="Kauai CC">Kauai Community College</option>
+              <option value="Leeward CC">Leeward Community College</option>
+              <option value="UH Hilo">UH Hilo</option>
+              <option value="UH Maui">UH Maui</option>
+              <option value="UH West Oahu">UH West Oahu</option>
+              <option value="Windward CC">Windward Community College</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="fields">
+        <div class="twelve wide field">
+          <div class="required field" id="subject">
             <label>Subject</label>
             <select class="ui fluid search dropdown" name="subject">
               <option value="">ICS</option>
@@ -230,35 +257,19 @@
             </select>
           </div>
         </div>
-        <div class="three wide required field">
+        <div class="four wide required field" id="courseNumber">
           <label>Course Number</label>
-          <input name="course number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type = "number" maxlength = "3" placeholder="311">
-        </div>
-        <div class="four wide field">
-          <div class="required field">
-            <label>Campus</label>
-          <select class="ui search dropdown">
-            <option value="">UH Manoa</option>
-            <option value="Manoa">UH Manoa</option>
-            <option value="Hawaii">Hawaii Community College</option>
-            <option value="Honolulu">Honolulu Community College</option>
-            <option value="Kapiolani">Kapiolani Community College</option>
-            <option value="Kauai">Kauai Community College</option>
-            <option value="Leeward">Leeward Community College</option>
-            <option value="Hilo">UH Hilo</option>
-            <option value="Maui">UH Maui</option>
-            <option value="West Oahu">UH West Oahu</option>
-            <option value="Windward">Windward Community College</option>
-          </select>
-        </div>
+          <input name="courseNumber"
+                 oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                 type="number" maxlength="3" placeholder="311">
         </div>
       </div>
 
       <div class="fields">
         <div class="five wide field">
-          <div class="field">
+          <div class="field" id="coverType">
             <label>Cover Type</label>
-            <select class="ui fluid search dropdown" name="cover type">
+            <select class="ui fluid search dropdown" name="coverType">
               <option value="">Hardcover</option>
               <option value="hardcover">Hardcover</option>
               <option value="paperback">Paperback</option>
@@ -267,40 +278,43 @@
         </div>
 
         <div class="five wide field">
-          <div class="required field">
-            <label>Condition</label>
-            <select class="ui fluid search dropdown" name="condition">
-              <option value="">Excellent</option>
-              <option value="brand new">Brand New</option>
-              <option value="excellent">Excellent</option>
-              <option value="good">Good</option>
-              <option value="fair">Fair</option>
-              <option value="worn">Worn</option>
-            </select>
-          </div>
+          <label>Condition</label>
+          <select class="ui fluid search dropdown" name="condition">
+            <option value="">Excellent</option>
+            <option value="brand new">Brand New</option>
+            <option value="excellent">Excellent</option>
+            <option value="good">Good</option>
+            <option value="fair">Fair</option>
+            <option value="worn">Worn</option>
+          </select>
         </div>
 
-        <div class="six wide required field">
+        <div class="six wide required field" id="price">
           <label>Price</label>
           <div class="ui right labeled input">
             <div class="ui label">$</div>
-            <input type="number" placeholder="40">
+            <input type="number" placeholder="40" name="price">
             <div class="ui basic label">.00</div>
           </div>
         </div>
       </div>
 
-      <div class="field">
+      <div class="field" id="description">
+        <label>Description</label>
+        <textarea rows="3" name="description"></textarea>
+      </div>
+
+      <div class="field" id="picture">
         <div>
           <label for="file" class="ui icon orange button">
             <i class="file icon"></i>
             Choose Image</label>
-          <input type="file" id="file" style="display:none">
+          <input name="picture" type="file" id="file" style="display:none">
         </div>
       </div>
 
-
       <button class="ui blue submit button">Submit</button>
+
     </form>
   </div>
 
@@ -308,6 +322,7 @@
     $('select.dropdown')
         .dropdown()
     ;
+    $('#idDropDown').dropdown('get value');
   </script>
 
   {{/if}}

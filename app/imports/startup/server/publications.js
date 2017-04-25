@@ -1,5 +1,6 @@
-import { Interests } from '/imports/api/interest/InterestCollection';
-import { Profiles } from '/imports/api/profile/ProfileCollection';
+import { Meteor } from 'meteor/meteor';
+import { Books } from '../../api/book/BookCollection.js';
 
-Interests.publish();
-Profiles.publish();
+Meteor.publish('Books', function publishBooks() {
+  return Books.find();
+});

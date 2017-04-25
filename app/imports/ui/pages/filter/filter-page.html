@@ -54,101 +54,40 @@
 
     </div>
 
-
-    <div style="margin-top: 40px; margin-bottom: 10px;" class="ui cards">
-
-      <div class="card">
+    <div style="margin-top: 40px; margin-bottom: 10px;" class="ui four stackable cards">
+      {{ #each book in booksList }}
+      <div class="ui card">
+        <div style="background-color: #0F444C;" class="ui slide masked reveal image">
+          {{#if book.picture}}
+          <img src={{ book.picture }} class="visible content">
+          {{else}}
+          <img src='/images/no-image.jpg' class="visible content">
+          {{/if}}
+          <div style="color: white; padding-top: 50px;" class="hidden center aligned content">
+            <p style="font-size: 16px;">Author(s): {{ book.author }}</p>
+            <p style="font-size: 16px;">Publisher: {{ book.publisher }} ({{ book.publicationYear }})</p>
+            <p style="font-size: 16px;">ISBN: {{ book.isbn }}</p>
+            <p style="font-size: 16px;">Cover Type: {{ book.coverType }}</p>
+            <p style="font-size: 16px;">Condition: {{ book.condition }}</p>
+          </div>
+        </div>
         <div class="content">
-          <a class="center aligned header">Set Theory And Logic</a>
-        </div>
-        <div class="center aligned description">
-          Author: Robert R. Stoll
-        </div>
-        <div class="center aligned description">
-          Edition: 1st Edition
-        </div>
-        <div class="center aligned description">
-          Subject: Information & Computer Science
-        </div>
-        <div class="center aligned description">
-          Course Number: 141
-        </div>
-        <div class="center aligned description">
-          Price: $29.99
+          <a class="header">{{ book.title }} - {{ book.edition }} Edition</a>
+          <div class="meta">
+            <span class="course">
+              <div class="uppercase">{{ book.subject }} {{ book.courseNumber }}</div>
+              {{ book.campus }}
+            </span>
+          </div>
         </div>
         <div class="extra content">
           <a>
-            <i style="color: blue" class="large mail square icon"></i>
-            student@hawaii.edu
-            <br/>
-            <i style="color: blue" class="large call square icon"></i>
-            (808)123-4567
+            <i class="dollar icon"></i>
+            {{ book.price }}.00
           </a>
         </div>
       </div>
-
-
-      <div class="card">
-        <div class="content">
-          <a class="center aligned header">Calculus</a>
-        </div>
-        <div class="center aligned description">
-          Author: John Rogawski
-        </div>
-        <div class="center aligned description">
-          Edition: 2nd Edition
-        </div>
-        <div class="center aligned description">
-          Subject: Mathematics
-        </div>
-        <div class="center aligned description">
-          Course Number: 241
-        </div>
-        <div class="center aligned description">
-          Price: $79.99
-        </div>
-        <div class="extra content">
-          <a>
-            <i style="color: blue" class="large mail square icon"></i>
-            student@hawaii.edu
-            <br/>
-            <i style="color: blue" class="large call square icon"></i>
-            (808)123-4567
-          </a>
-        </div>
-      </div>
-
-
-      <div class="card">
-        <div class="content">
-          <a class="center aligned header">Physics</a>
-        </div>
-        <div class="center aligned description">
-          Author: James S. Walker
-        </div>
-        <div class="center aligned description">
-          Edition: 2nd Edition
-        </div>
-        <div class="center aligned description">
-          Subject: Physics
-        </div>
-        <div class="center aligned description">
-          Course Number: 171
-        </div>
-        <div class="center aligned description">
-          Price: $49.99
-        </div>
-        <div class="extra content">
-          <a>
-          <i style="color: blue" class="large mail square icon"></i>
-            student@hawaii.edu
-          <br/>
-          <i style="color: blue" class="large call square icon"></i>
-            (808)123-4567
-          </a>
-        </div>
-      </div>
-
+      {{/each}}
     </div>
 
     <script>
