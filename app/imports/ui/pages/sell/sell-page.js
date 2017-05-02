@@ -63,7 +63,7 @@ Template.Sell_Page.events({
       price,
       description,
       picture,
-      username
+      username,
     };
     // Clear out any old validation errors.
     instance.context.resetValidation();
