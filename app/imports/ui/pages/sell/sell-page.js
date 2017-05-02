@@ -46,6 +46,7 @@ Template.Sell_Page.events({
     const price = event.target.price.value;
     const description = event.target.description.value;
     const picture = event.target.picture.value;
+    const username = Meteor.user().profile.name;
 
     const newSellData = {
       title,
@@ -61,7 +62,8 @@ Template.Sell_Page.events({
       condition,
       price,
       description,
-      picture
+      picture,
+      username
     };
     // Clear out any old validation errors.
     instance.context.resetValidation();
@@ -72,7 +74,6 @@ Template.Sell_Page.events({
     if (instance.context.isValid()) {
       Books.insert(newSellData);
       instance.messageFlags.set(displayErrorMessages, false);
-      const username = Meteor.user().profile.name;
       FlowRouter.go(`/${username}/filter`);
     } else {
       instance.messageFlags.set(displayErrorMessages, true);
