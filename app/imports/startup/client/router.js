@@ -68,6 +68,14 @@ userRoutes.route('/homepage', {
   },
 });
 
+export const mybooksPageRouteName = 'MyBooks_Page';
+userRoutes.route('/mybooks', {
+  name: mybooksPageRouteName,
+  action() {
+    BlazeLayout.render('User_Layout', { main: mybooksPageRouteName });
+  },
+});
+
 export const filterPageRouteName = 'Filter_Page';
 userRoutes.route('/filter', {
   name: filterPageRouteName,

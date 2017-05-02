@@ -30,6 +30,8 @@ Template.Sell_Page.events({
   'submit .sell-data-form'(event, instance) {
     event.preventDefault();
     // Get name (text field)
+    // const user = event.target.User.value;
+    // Trying to get the username of the person who uploaded the book
     const title = event.target.Title.value;
     const author = event.target.Author.value;
     const edition = event.target.edition.value;
