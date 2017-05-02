@@ -21,6 +21,7 @@ export const BooksSchema = new SimpleSchema({
   price: { type: String, optional: false, label: 'price' },
   description: { type: String, optional: true, label: 'description' },
   picture: { type: SimpleSchema.RegEx.Url, optional: true, label: 'picture' },
+  username: { type: String, optional: false, label: 'username' },
 });
 
 Books.attachSchema(BooksSchema);
