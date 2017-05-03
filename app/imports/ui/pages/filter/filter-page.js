@@ -1,5 +1,4 @@
 import { Template } from 'meteor/templating';
-import { _ } from 'meteor/underscore';
 import { Books } from '/imports/api/book/BookCollection.js';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 

@@ -72,7 +72,9 @@
           </div>
         </div>
         <div class="content">
-          <a class="header" href="{{pathFor 'Description_Page' username=routeUserName _id=book._id}}">{{ book.title }} - {{ book.edition }} Edition</a>
+          <a class="header" href="{{pathFor 'Description_Page' username=routeUserName _id=book._id}}">
+            {{ book.title }} - {{ book.edition }} Edition'
+          </a>
           <div class="meta">
             <span class="course">
               <div class="uppercase">{{ book.subject }} {{ book.courseNumber }}</div>
