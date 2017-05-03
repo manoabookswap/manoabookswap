@@ -92,6 +92,14 @@ userRoutes.route('/sell', {
   },
 });
 
+export const descriptionPageRouteName = 'Description_Page';
+userRoutes.route('/description/:_id', {
+  name: descriptionPageRouteName,
+  action() {
+    BlazeLayout.render('User_Layout', { main: descriptionPageRouteName });
+  },
+});
+
 export const faqPageRouteName = 'FAQ_Page';
 userRoutes.route('/faq', {
   name: faqPageRouteName,
