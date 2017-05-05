@@ -14,42 +14,29 @@
       </div>
 
       <div class="fields">
-        {{> Text_Form_Control label="Email" placeholder="johnsmith@hawaii.edu" errorMessage=(fieldError "firstName")}}
-        {{> Text_Form_Control label="Phone Number" placeholder="808-123-4567" errorMessage=(fieldError "firstName")}}
-      </div>
+        {{> Text_Form_Control label="Email" placeholder="johnsmith@hawaii.edu" errorMessage=(fieldError "email")}}
 
-      <div class="field">
-        <div class="ui centered form">
-          <div class="inline fields">
-            <label>Preferred form of contact</label>
-            <div class="field">
-              <div class="ui radio checkbox">
-                <input type="radio" name="frequency" checked="checked">
-                <label>Text</label>
-              </div>
-            </div>
-            <div class="field">
-              <div class="ui radio checkbox">
-                <input type="radio" name="frequency">
-                <label>Email</label>
-              </div>
-            </div>
-            <div class="field">
-              <div class="ui radio checkbox">
-                <input type="radio" name="frequency">
-                <label>Either</label>
-              </div>
-            </div>
-          </div>
+        <div class="field">
+          <label>Phone Number</label>
+          <input type="text" name="phoneNumber" maxlength="12" placeholder="808-123-4567">
         </div>
       </div>
 
       <div class="field">
-        
+        <label>Preferred Method of Contact</label>
+        <select class="ui fluid dropdown" name="preferredMethod">
+          <option value="">(Select One)</option>
+          <option value="text">Text</option>
+          <option value="email">Email</option>
+          <option value="either">Either</option>
+        </select>
       </div>
 
       <div class="field">
-        {{> Select_Form_Control label="Subjects" options=interests errorMessage=(fieldError "interests") multiple=true }}
+        <label>Profile Picture</label>
+        <div class="ui input">
+          <input name="picture" type="text" placeholder="http://example.com/image.jpg">
+        </div>
       </div>
 
       <button class="ui primary button" type="submit">Update</button>
@@ -60,6 +47,13 @@
       {{/if}}
     </form>
   </div>
+
+  <script>
+    $('select.dropdown')
+        .dropdown()
+    ;
+    $('#idDropDown').dropdown('get value');
+  </script>
 
   {{/if}}
 
