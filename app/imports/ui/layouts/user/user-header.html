@@ -1,7 +1,8 @@
 <template name="User_Header">
   <div style="background-color: #0F444C" class="ui top fixed borderless inverted menu">
     <div class="ui container">
-      <a class="{{isActiveRoute "Homepage_Page"}} item" href="{{pathFor "Homepage_Page" username=routeUserName}}"><h1>Manoa Book Swap</h1></a>
+      <img style="max-height: 70px;" class="ui image" src="/images/logo-2.png">
+      <a style="padding-left: 10px; padding-right: 10px;" class="{{isActiveRoute "Homepage_Page"}} item" href="{{pathFor "Homepage_Page" username=routeUserName}}"><h1>Manoa Book Swap</h1></a>
       <a class="{{isActiveRoute "Profile_Page"}} item" href="{{pathFor "Profile_Page" username=routeUserName}}">Edit Profile</a>
       <a class="{{isActiveRoute "Filter_Page"}} item" href="{{pathFor "Filter_Page" username=routeUserName}}">Shop Books</a>
       <a class="{{isActiveRoute "Sell_Page"}} item" href="{{pathFor "Sell_Page" username=routeUserName}}">Sell Books</a>
