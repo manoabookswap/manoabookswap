@@ -14,10 +14,15 @@ Template.MyBooks_Page.helpers({
    */
   booksFilter() {
     return Books.find({username: FlowRouter.getParam('username')});
-  }
+  },
+  routeUserName() {
+    return FlowRouter.getParam('username');
+  },
 });
 
 Template.MyBooks_Page.events({
-
+  'click .delete'(event, instance) {
+      Books.remove(Books.findOne(FlowRouter.getParam('_id')));
+  }
 });
 
