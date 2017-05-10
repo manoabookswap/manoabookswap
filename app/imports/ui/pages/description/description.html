@@ -5,9 +5,6 @@
   {{#if Template.subscriptionsReady}}
 
   <div style="margin-top: 10px" class="ui container">
-
-    {{ profile.username }}
-
     <div class="ui grid book">
       <div class="two wide column"></div>
       <div class="five wide column">
@@ -34,7 +31,9 @@
                 <div class="info">ISBN: {{ book.isbn }}</div>
                 <div class="info">Cover: {{ book.coverType }}</div>
                 <div class="info">Condition: {{ book.condition }}</div>
-                <div class="info">Course: <div class="uppercase inline">{{ book.subject }} {{ book.courseNumber }}</div></div>
+                <div class="info">Course:
+                  <div class="uppercase inline">{{ book.subject }} {{ book.courseNumber }}</div>
+                </div>
                 <div class="info">Campus: {{ book.campus }}</div>
               </div>
             </div>
@@ -42,12 +41,39 @@
         </div>
       </div>
       <div class="one wide column"></div>
+      <div class="two wide column"></div>
+      <div class="twelve wide column">
+        {{ book.description }}
+      </div>
+      <div class="two wide column"></div>
+      <div class="two wide column">
+        {{#if profile.picture}}
+        <div>{{ profile.picture }}</div>
+        {{/if}}
+      </div>
+      <div class="twelve wide column">
+        <div class="ui items">
+          <div class="item">
+            <div class="content">
+              <div class="header">Contact Seller</div>
+              <div class="description">
+                <div>Name: {{ profile.firstName }}</div>
+                {{#if profile.email}}
+                <div>Email: {{ profile.email }}</div>
+                {{/if}}
+                {{#if profile.phoneNumber}}
+                <div>Phone: {{ profile.phoneNumber }}</div>
+                {{/if}}
+                {{#if profile.preferredMethod}}
+                <div>Preferred Method of Contact: {{ profile.preferredMethod }}</div>
+                {{/if}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="two wide column"></div>
     </div>
-
-    <div class="ui grid description">
-      <p>{{ book.description }}</p>
-    </div>
-
   </div>
 
   {{/if}}

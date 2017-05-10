@@ -1,29 +1,21 @@
+import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 import { ReactiveDict } from 'meteor/reactive-dict';
-import { FlowRouter } from 'meteor/kadira:flow-router';
 import { _ } from 'meteor/underscore';
-import { Profiles } from '/imports/api/profile/ProfileCollection';
-import { Interests } from '/imports/api/interest/InterestCollection';
+import { FlowRouter } from 'meteor/kadira:flow-router';
+import { Profiles, ProfilesSchema } from '../../../api/profile/ProfileCollection.js';
 
-const displaySuccessMessage = 'displaySuccessMessage';
+/* eslint-disable no-param-reassign */
+
 const displayErrorMessages = 'displayErrorMessages';
 
 Template.Profile_Page.onCreated(function onCreated() {
-  this.subscribe(Interests.getPublicationName());
-  this.subscribe(Profiles.getPublicationName());
   this.messageFlags = new ReactiveDict();
-  this.messageFlags.set(displaySuccessMessage, false);
   this.messageFlags.set(displayErrorMessages, false);
-  this.context = Profiles.getSchema().namedContext('Profile_Page');
+  this.context = ProfilesSchema.namedContext('Profile_Page');
 });
 
 Template.Profile_Page.helpers({
-  successClass() {
-    return Template.instance().messageFlags.get(displaySuccessMessage) ? 'success' : '';
-  },
-  displaySuccessMessage() {
-    return Template.instance().messageFlags.get(displaySuccessMessage);
-  },
   errorClass() {
     return Template.instance().messageFlags.get(displayErrorMessages) ? 'error' : '';
   },
@@ -32,49 +24,43 @@ Template.Profile_Page.helpers({
     const errorObject = _.find(invalidKeys, (keyObj) => keyObj.name === fieldName);
     return errorObject && Template.instance().context.keyErrorMessage(errorObject.name);
   },
-  profile() {
-    return Profiles.findDoc(FlowRouter.getParam('username'));
-  },
-  interests() {
-    const profile = Profiles.findDoc(FlowRouter.getParam('username'));
-    const selectedInterests = profile.interests;
-    return profile && _.map(Interests.findAll(),
-            function makeInterestObject(interest) {
-              return { label: interest.name, selected: _.contains(selectedInterests, interest.name) };
-            });
-  },
 });
-
 
 Template.Profile_Page.events({
   'submit .profile-data-form'(event, instance) {
     event.preventDefault();
+    // Get name (text field)
+    // const user = event.target.User.value;
+    // Trying to get the username of the person who uploaded the book
     const firstName = event.target.First.value;
     const lastName = event.target.Last.value;
     const email = event.target.Email.value;
     const phoneNumber = event.target.phoneNumber.value;
     const preferredMethod = event.target.preferredMethod.value;
     const picture = event.target.picture.value;
-    const username = FlowRouter.getParam('username'); // schema requires username.
+    const username = Meteor.user().profile.name;
 
-    const updatedProfileData = { firstName, lastName, email, phoneNumber, preferredMethod, picture, username };
-
+    const newProfileData = {
+      firstName,
+      lastName,
+      email,
+      phoneNumber,
+      preferredMethod,
+      picture,
+      username,
+    };
     // Clear out any old validation errors.
     instance.context.resetValidation();
-    // Invoke clean so that updatedProfileData reflects what will be inserted.
-    Profiles.getSchema().clean(updatedProfileData);
+    // Invoke clean so that contactData reflects what will be inserted.
+    ProfilesSchema.clean(newProfileData);
     // Determine validity.
-    instance.context.validate(updatedProfileData);
-
+    instance.context.validate(newProfileData);
     if (instance.context.isValid()) {
-      const docID = Profiles.findDoc(FlowRouter.getParam('username'))._id;
-      const id = Profiles.update(docID, { $set: updatedProfileData });
-      instance.messageFlags.set(displaySuccessMessage, id);
+      Profiles.insert(newProfileData);
       instance.messageFlags.set(displayErrorMessages, false);
+      FlowRouter.go(`/${username}/homepage`);
     } else {
-      instance.messageFlags.set(displaySuccessMessage, false);
       instance.messageFlags.set(displayErrorMessages, true);
     }
   },
 });
-

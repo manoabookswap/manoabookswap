@@ -14,6 +14,6 @@ Template.Description_Page.helpers({
     return Books.findOne(FlowRouter.getParam('_id'));
   },
   profile() {
-    return Profiles.findDoc(FlowRouter.getParam('username'));
+    return Profiles.findOne({ username: Books.findOne(FlowRouter.getParam('_id')).username });
   },
 });
