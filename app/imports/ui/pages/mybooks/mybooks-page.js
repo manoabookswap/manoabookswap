@@ -1,8 +1,6 @@
 import { Template } from 'meteor/templating';
 import { ReactiveDict } from 'meteor/reactive-dict';
 import { Books } from '/imports/api/book/BookCollection.js';
-import { FlowRouter } from 'meteor/kadira:flow-router';
-
 
 Template.MyBooks_Page.onCreated(function onCreated() {
   this.subscribe('Books');
@@ -19,9 +17,5 @@ Template.MyBooks_Page.helpers({
   routeUserName() {
     return FlowRouter.getParam('username');
   },
-});
-
-Template.MyBooks_Page.events({
-
 });
 
