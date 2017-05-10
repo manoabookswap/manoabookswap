@@ -31,7 +31,7 @@ Meteor.startup(() => {
   /** Only initialize database if it's empty. */
   const collectionList = [Interests, Profiles];
   const totalDocuments = _.reduce(collectionList, function reducer(memo, collection) {
-    return memo + collection.find().count();
+    return memo + collection.count();
   }, 0);
   if (totalDocuments === 0) {
     const fileName = Meteor.settings.public.initialDatabaseFileName;
