@@ -1,29 +1,56 @@
 <template name="MyBooks_Page">
 
-  <body>
-
   {{#if Template.subscriptionsReady}}
+  <div style="margin-top: 10px" class="ui container">
+    <h1 class="ui dividing header">My Books for Sale</h1>
 
-    <div style="margin-top: 10px" class="ui two row grid container">
-      <div class="row">
-        <div class="field">
-          <h1>My Books</h1>
+    <div style="margin-top: 40px; margin-bottom: 10px;" class="ui four stackable cards">
+      {{ #each book in booksFilter }}
+      <div class="ui card">
+        <div style="background-color: #0F444C;" class="ui slide masked reveal image">
+          {{#if book.picture}}
+          <img src={{ book.picture }} class="visible content">
+          {{else}}
+          <img src='/images/no-image.jpg' class="visible content">
+          {{/if}}
+          <div style="color: white; padding-top: 50px;" class="hidden center aligned content">
+            <p style="font-size: 16px;">Author(s): {{ book.author }}</p>
+            <p style="font-size: 16px;">Publisher: {{ book.publisher }} ({{ book.publicationYear }})</p>
+            <p style="font-size: 16px;">ISBN: {{ book.isbn }}</p>
+            <p style="font-size: 16px;">Cover Type: {{ book.coverType }}</p>
+            <p style="font-size: 16px;">Condition: {{ book.condition }}</p>
+          </div>
+        </div>
+        <div class="content">
+          <a class="header">{{ book.title }} - {{ book.edition }} Edition</a>
+          <div class="meta">
+            <span class="course">
+              <div class="uppercase">{{ book.subject }} {{ book.courseNumber }}</div>
+              {{ book.campus }}
+            </span>
+          </div>
+        </div>
+        <div class="extra content">
+          <div class="ui two column grid">
+            <div class="column">
+              <div align="left">
+                <a><i class="dollar icon"></i>
+                  {{ book.price }}.00
+                </a>
+              </div>
+            </div>
+            <div class="column">
+              <div align="right">
+                <a style="text-align: right" href="mailto:{{ book.username }}@hawaii.edu"><i
+                    class="large mail icon"></i></a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-
-      <div class="row">
-        <div class="ui cards">
-
-          // {{#each profile in profiles }}
-          //   {{> Directory_Profile profile=profile }}
-          // {{/each}}
-
-        </div>
-      </div>
+      {{/each}}
     </div>
-
+  </div>
   {{/if}}
-
-  </body>
 
 </template>
