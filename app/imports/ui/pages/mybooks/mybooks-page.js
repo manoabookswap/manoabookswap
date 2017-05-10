@@ -20,9 +20,3 @@ Template.MyBooks_Page.helpers({
   },
 });
 
-Template.MyBooks_Page.events({
-  'click .delete'(event, instance) {
-      Books.remove(Books.findOne(FlowRouter.getParam('_id')));
-  }
-});
-
