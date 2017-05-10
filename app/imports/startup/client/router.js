@@ -14,7 +14,6 @@ FlowRouter.route('/', {
 });
 
 
-
 /*                        DIRECTORY ROUTE                       */
 
 function addDirectoryBodyClass() {
