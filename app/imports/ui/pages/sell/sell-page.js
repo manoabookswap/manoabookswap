@@ -47,6 +47,10 @@ Template.Sell_Page.events({
     const description = event.target.description.value;
     const picture = event.target.picture.value;
     const username = Meteor.user().profile.name;
+    const name = event.target.Name.value;
+    const preferredMethod = event.target.preferredMethod.value;
+    const email = event.target.Email.value;
+    const phoneNumber = event.target.phoneNumber.value;
 
     const newSellData = {
       title,
@@ -64,6 +68,10 @@ Template.Sell_Page.events({
       description,
       picture,
       username,
+      name,
+      preferredMethod,
+      email,
+      phoneNumber,
     };
     // Clear out any old validation errors.
     instance.context.resetValidation();
@@ -73,6 +81,7 @@ Template.Sell_Page.events({
     instance.context.validate(newSellData);
     if (instance.context.isValid()) {
       Books.insert(newSellData);
+      console.log(newSellData);
       instance.messageFlags.set(displayErrorMessages, false);
       FlowRouter.go(`/${username}/filter`);
     } else {

@@ -4,7 +4,7 @@
 
   <div class="ui container sell">
     <form class="ui form sell-data-form {{ errorClass }}">
-      <h4 class="ui dividing header">Post a Book for Sale</h4>
+      <h2 class="ui dividing header">Sell a Book</h2>
       <div class="two fields">
 
         {{> Text_Form_Control label="Title" placeholder="Introduction to Algorithms" required=true
@@ -271,8 +271,8 @@
             <label>Cover Type</label>
             <select class="ui fluid search dropdown" name="coverType">
               <option value="">Hardcover</option>
-              <option value="hardcover">Hardcover</option>
-              <option value="paperback">Paperback</option>
+              <option value="Hardcover">Hardcover</option>
+              <option value="Paperback">Paperback</option>
             </select>
           </div>
         </div>
@@ -281,11 +281,11 @@
           <label>Condition</label>
           <select class="ui fluid search dropdown" name="condition">
             <option value="">Excellent</option>
-            <option value="brand new">Brand New</option>
-            <option value="excellent">Excellent</option>
-            <option value="good">Good</option>
-            <option value="fair">Fair</option>
-            <option value="worn">Worn</option>
+            <option value="Brand new">Brand New</option>
+            <option value="Excellent">Excellent</option>
+            <option value="Good">Good</option>
+            <option value="Fair">Fair</option>
+            <option value="Worn">Worn</option>
           </select>
         </div>
 
@@ -308,6 +308,29 @@
         <label>Image URL</label>
         <div class="ui input">
           <input name="picture" type="text" placeholder="http://example.com/image.jpg">
+        </div>
+      </div>
+
+      <div class="ui text container segment">
+        <div class="ui dividing header">Contact Information</div>
+        <div class="two fields">
+          {{> Text_Form_Control label="Name" placeholder="John" value=profile.name errorMessage=(fieldError "name")}}
+          <div class="field">
+            <label>Preferred Method of Contact</label>
+            <select class="ui fluid dropdown" name="preferredMethod">
+              <option value="">(Select One)</option>
+              <option value="Text">Text</option>
+              <option value="Email">Email</option>
+              <option value="Text or Email">Text or Email</option>
+            </select>
+          </div>
+        </div>
+        <div class="two fields">
+          {{> Text_Form_Control label="Email" placeholder="johnsmith@hawaii.edu" errorMessage=(fieldError "email")}}
+          <div class="field">
+            <label>Phone Number</label>
+            <input type="text" name="phoneNumber" maxlength="12" placeholder="808-123-4567">
+          </div>
         </div>
       </div>
 
