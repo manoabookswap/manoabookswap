@@ -20,8 +20,8 @@ Template.Description_Page.helpers({
 
 Template.Description_Page.events({
   'click .delete'(event, instance) {
-    const doc = Books.findOne(FlowRouter.getParam('_id'));
-    Books.remove({_id: doc._id});
-    FlowRouter.go(`/${Meteor.user().profile.name}/mybooks`);
+      const doc = Books.findOne(FlowRouter.getParam('_id'));
+      Books.remove({ _id: doc._id });
+      FlowRouter.go(`/${Meteor.user().profile.name}/mybooks`);
   }
 });
