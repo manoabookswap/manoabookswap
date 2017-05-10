@@ -2,18 +2,32 @@
   <footer>
     <div style="padding-top: 15px" class="ui center aligned container">
         <hr>
-      <a style="color: black" href="http://manoabookswap.github.io"><i class="large github alternate icon"></i><br>Github</a><br><br>
+
+      <button class="ui button">
+        <a style="color: black" href="http://manoabookswap.github.io"><i class="large github alternate icon"></i><br>Github</a><br>
+      </button>
+      <br><br>
+
       <div class="ui three column grid container">
         <div class="column">
-          <a style="color: black" href="{{pathFor 'Contact_Us' username=routeUserName}}">Contact Us</a><br/>
+          <button class="ui button">
+            <a style="color: black" href="{{pathFor 'Contact_Us' username=routeUserName}}">Contact Us</a><br/>
+          </button>
         </div>
+
         <div class="column">
-          <a style="color: black" href="{{pathFor 'FAQ_Page' username=routeUserName}}">FAQ</a> <br/>
+          <button class="ui button">
+            <a style="color: black" href="{{pathFor 'FAQ_Page' username=routeUserName}}">FAQ</a> <br/>
+          </button>
         </div>
+
         <div class="column">
-          <a style="color: black" href="{{pathFor 'Terms_Of_Service' username=routeUserName}}">TOS</a> <br/>
+          <button class="ui button">
+            <a style="color: black" href="{{pathFor 'Terms_Of_Service' username=routeUserName}}">TOS</a> <br/>
+          </button>
         </div>
       </div>
+      
       <br>
         Sponsored by:<br>
         Department of Information and Computer Sciences <br />
