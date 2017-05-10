@@ -1,12 +1,13 @@
 <template name="Landing_Page">
 
-    <div class="ui one column center aligned grid">
+  <div class="ui one column center aligned grid">
     <div class="welcome">
       <div class="row">
         <h1 class="welcome-message">Welcome to Manoa Book Swap</h1>
       </div>
       <div class="row description">
-        <h3>Bookstore textbooks are overpriced. Buy and sell your used textbooks from UH Manoa students just like you.</h3>
+        <h3>Bookstore textbooks are overpriced. Buy and sell your used textbooks from UH Manoa students just like
+          you.</h3>
       </div>
     </div>
 
@@ -23,14 +24,17 @@
 
     <div class="five wide column login">
       {{> Cas_Login size="large"}}
+      <br>
+      <button style="background: #42B4E6; color: white" class="ui large button docs"><a href="https://manoabookswap.github.io/">Documentation</a></button>
     </div>
+
   </div>
 
   <style>
     body {
       background: linear-gradient(
-          rgba(20,20,20, .5),
-          rgba(20,20,20, .5)),
+          rgba(20, 20, 20, .5),
+          rgba(20, 20, 20, .5)),
       url(/images/landing-image.JPG) fixed;
       background-size: cover;
       padding: 0;
