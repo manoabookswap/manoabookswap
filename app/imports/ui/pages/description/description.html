@@ -1,0 +1,78 @@
+<template name="Description_Page">
+
+  <body>
+
+  {{#if Template.subscriptionsReady}}
+
+  <div style="margin-top: 10px" class="ui container">
+    <div class="ui grid book">
+      <div class="two wide column"></div>
+      <div class="five wide column">
+        {{#if book.picture}}
+        <div class="ui image">
+          <img src={{ book.picture }} class="visible content">
+        </div>
+        {{else}}
+        <div class="ui image">
+          <img src='/images/no-image.jpg' class="visible content">
+        </div>
+        {{/if}}
+      </div>
+      <div class="eight wide column">
+        <div class="ui items">
+          <div class="item">
+            <div class="content">
+              <div class="header">{{ book.title }} - {{ book.edition }} Edition</div>
+              <div class="meta">${{ book.price }}.00</div>
+              <div class="description">
+                <div class="info">Author(s): {{ book.author }}</div>
+                <div class="info">Publisher: {{ book.publisher }}</div>
+                <div class="info">Year: {{ book.publicationYear }}</div>
+                <div class="info">ISBN: {{ book.isbn }}</div>
+                <div class="info">Cover: {{ book.coverType }}</div>
+                <div class="info">Condition: {{ book.condition }}</div>
+                <div class="info">Course: <div class="uppercase inline">{{ book.subject }} {{ book.courseNumber }}</div></div>
+                <div class="info">Campus: {{ book.campus }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="one wide column"></div>
+      <div class="two wide column"></div>
+      <div class="twelve wide column">
+        {{ book.description }}
+      </div>
+      <div class="two wide column"></div>
+      <div class="two wide column"></div>
+      <div class="twelve wide column">
+        <div class="ui items">
+        <div class="item">
+          <div class="content">
+            <div class="header">Contact Seller</div>
+            <div class="description">
+              {{#if book.name}}
+              <div>Name: {{ book.name }}</div>
+              {{/if}}
+              {{#if book.email}}
+              <div>Email: {{ book.email }}</div>
+              {{/if}}
+              {{#if book.phoneNumber}}
+              <div>Phone: {{ book.phoneNumber }}</div>
+              {{/if}}
+              {{#if book.preferredMethod}}
+              <div>Preferred Method of Contact: {{ book.preferredMethod }}</div>
+              {{/if}}
+            </div>
+          </div>
+        </div>
+      </div>      </div>
+      <div class="two wide column"></div>
+    </div>
+  </div>
+
+  {{/if}}
+
+  </body>
+
+</template>

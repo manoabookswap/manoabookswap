@@ -21,7 +21,11 @@ const bookSeeds = [
     price: '40',
     description: 'This book is essential for ICS 311. Exams are open-book, so it helps a lot.',
     picture: '/images/clrs.jpeg',
-    username: 'kclemmer',
+    username: 'dtan808',
+    name: 'Danny',
+    preferredMethod: 'Text',
+    email: 'dtan808@hawaii.edu',
+    phoneNumber: '808-265-2452',
   },
   {
     title: 'Chemistry: A Molecular Approach',
@@ -38,7 +42,11 @@ const bookSeeds = [
     price: '70',
     description: 'I used this book for both CHEM 171 and 172.',
     picture: '/images/no-image.jpg',
-    username: 'kclemmer',
+    username: 'dtan808',
+    name: 'Danny',
+    preferredMethod: 'Text',
+    email: 'dtan808@hawaii.edu',
+    phoneNumber: '808-265-2452',
   },
 ];
 

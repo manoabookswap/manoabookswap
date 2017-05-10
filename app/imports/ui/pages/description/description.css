@@ -1,0 +1,17 @@
+.info {
+  padding-bottom: 8px;
+}
+
+.ui.grid.book {
+  padding: 50px 100px 20px 100px;
+}
+
+.ui.grid.description {
+  padding-left: 210px;
+  padding-right: 210px;
+  padding-bottom: 50px;
+}
+
+.uppercase.inline {
+  display: inline;
+}
